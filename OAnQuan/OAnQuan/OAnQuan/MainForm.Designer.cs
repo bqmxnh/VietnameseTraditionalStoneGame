@@ -226,7 +226,7 @@
             // 
             sốDânToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { toolStripComboBox1 });
             sốDânToolStripMenuItem.Name = "sốDânToolStripMenuItem";
-            sốDânToolStripMenuItem.Size = new Size(270, 34);
+            sốDânToolStripMenuItem.Size = new Size(170, 34);
             sốDânToolStripMenuItem.Text = "Số dân";
             // 
             // toolStripComboBox1
