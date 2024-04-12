@@ -17,16 +17,39 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button)
+                {
+                    Button button = control as Button;
+                    int value = int.Parse(button.Text);
+                    // Nhóm các button từ 1 đến 5
+                    if (button.Name == "button1" || button.Name == "button2" || button.Name == "button3" || button.Name == "button4" || button.Name == "button5")
+                        button.Image = imageListButton1to5.Images[value];
+                    // Nhóm các button từ 7 đến 11
+                    else if (button.Name == "button7" || button.Name == "button8" || button.Name == "button9" || button.Name == "button10" || button.Name == "button11")
+                        button.Image = imageListButton7to11.Images[value];
+                    // Button 6
+                    else if (button.Name == "button6")
+                        button.Image = imageListButton6.Images[value]; // Thay "image6" bằng tên hình ảnh của bạn
+                                                                       // Button 12
+                    else if (button.Name == "button12")
+                        button.Image = imageListButton12.Images[value]; // Thay "image12" bằng tên hình ảnh của bạn
+                }
+            }
         }
 
         // Khai báo biến toàn cục để lưu giá trị và vị trí của nút được chọn
         int value;
         int position;
         bool player1Turn = true;
+      
 
         // Sự kiện click nút cho tất cả các nút có giá trị
         private void button_Click(object sender, EventArgs e)
         {
+          
+
             // Nếu nút có giá trị là 0, không làm gì cả
             if ((sender as Button).Text == "0")
                 return;
@@ -41,8 +64,10 @@ namespace WindowsFormsApp1
                 else if (!player1Turn && position >= 7) // Kiểm tra lượt của player 2
                     panel1.Visible = true; // Hiển thị panel cho player 2
             }
+            
         }
 
+       
         //check 2 buttons after the button chosen.
         private void getscoreright(int position)
         {
@@ -297,6 +322,28 @@ namespace WindowsFormsApp1
                 return true;
             return false;
         }
+        // Sự kiện khi giá trị Text của nút được thay đổi
+        // Sự kiện button_TextChanged
+        private void button_TextChanged(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            int value = int.Parse(button.Text);
+
+            // Nhóm các button từ 1 đến 5
+            if (button.Name == "button1" || button.Name == "button2" || button.Name == "button3" || button.Name == "button4" || button.Name == "button5")
+                button.Image = imageListButton1to5.Images[value];
+            // Nhóm các button từ 7 đến 11
+            else if (button.Name == "button7" || button.Name == "button8" || button.Name == "button9" || button.Name == "button10" || button.Name == "button11")
+                button.Image = imageListButton7to11.Images[value];
+            // Button 6
+            else if (button.Name == "button6")
+                button.Image = imageListButton6.Images[value]; // Thay "image6" bằng tên hình ảnh của bạn
+                                                                   // Button 12
+            else if (button.Name == "button12")
+                button.Image = imageListButton12.Images[value]; // Thay "image12" bằng tên hình ảnh của bạn
+        }
+
+
         // Sự kiện click nút cho các nút trong panel của player 1
         private async void buttonOpt_Click(object sender, EventArgs e)
         {
@@ -340,5 +387,6 @@ namespace WindowsFormsApp1
             }
             player1Turn = !player1Turn; // Chuyển lượt cho player 1
         }
+
     }
 }
