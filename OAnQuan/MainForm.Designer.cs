@@ -66,6 +66,8 @@
             this.imageListQuan12 = new System.Windows.Forms.ImageList(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.lb1name = new System.Windows.Forms.Label();
+            this.lb2name = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -604,11 +606,31 @@
             this.label4.TabIndex = 12;
             this.label4.Text = "Time:";
             // 
+            // lb1name
+            // 
+            this.lb1name.AutoSize = true;
+            this.lb1name.Location = new System.Drawing.Point(471, 7);
+            this.lb1name.Name = "lb1name";
+            this.lb1name.Size = new System.Drawing.Size(14, 16);
+            this.lb1name.TabIndex = 13;
+            this.lb1name.Text = "1";
+            // 
+            // lb2name
+            // 
+            this.lb2name.AutoSize = true;
+            this.lb2name.Location = new System.Drawing.Point(472, 405);
+            this.lb2name.Name = "lb2name";
+            this.lb2name.Size = new System.Drawing.Size(14, 16);
+            this.lb2name.TabIndex = 14;
+            this.lb2name.Text = "1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 435);
+            this.ClientSize = new System.Drawing.Size(759, 435);
+            this.Controls.Add(this.lb2name);
+            this.Controls.Add(this.lb1name);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox4);
@@ -681,6 +703,8 @@
         private System.Windows.Forms.ImageList imageListQuan12;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lb1name;
+        private System.Windows.Forms.Label lb2name;
     }
 }
 
