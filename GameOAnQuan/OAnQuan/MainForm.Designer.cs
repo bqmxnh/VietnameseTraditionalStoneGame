@@ -60,6 +60,14 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.imageListQuan6 = new System.Windows.Forms.ImageList(this.components);
+            this.imageListQuan12 = new System.Windows.Forms.ImageList(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lb1name = new System.Windows.Forms.Label();
+            this.lb2name = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -212,7 +220,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(86, 248);
             this.button6.TabIndex = 1;
-            this.button6.Text = "5";
+            this.button6.Text = "1";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.TextChanged += new System.EventHandler(this.button_TextChanged);
@@ -225,7 +233,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(86, 248);
             this.button12.TabIndex = 1;
-            this.button12.Text = "5";
+            this.button12.Text = "1";
             this.button12.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button12.UseVisualStyleBackColor = false;
             this.button12.TextChanged += new System.EventHandler(this.button_TextChanged);
@@ -235,7 +243,7 @@
             this.panel2.Controls.Add(this.button16);
             this.panel2.Controls.Add(this.button17);
             this.panel2.Controls.Add(this.button18);
-            this.panel2.Location = new System.Drawing.Point(283, 53);
+            this.panel2.Location = new System.Drawing.Point(284, 52);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(297, 91);
@@ -244,7 +252,7 @@
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(17, 13);
+            this.button16.Location = new System.Drawing.Point(17, 12);
             this.button16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(84, 74);
@@ -255,7 +263,7 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(197, 13);
+            this.button17.Location = new System.Drawing.Point(197, 12);
             this.button17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(84, 74);
@@ -266,7 +274,7 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(107, 13);
+            this.button18.Location = new System.Drawing.Point(107, 12);
             this.button18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(84, 74);
@@ -307,7 +315,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 117);
+            this.label2.Location = new System.Drawing.Point(104, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 7;
@@ -326,142 +334,351 @@
             // 
             this.imageListButton1to5.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton1to5.ImageStream")));
             this.imageListButton1to5.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton1to5.Images.SetKeyName(0, "KhungLinh100.bmp");
-            this.imageListButton1to5.Images.SetKeyName(1, "KhungLinh101.bmp");
-            this.imageListButton1to5.Images.SetKeyName(2, "KhungLinh102.bmp");
-            this.imageListButton1to5.Images.SetKeyName(3, "KhungLinh103.bmp");
-            this.imageListButton1to5.Images.SetKeyName(4, "KhungLinh104.bmp");
-            this.imageListButton1to5.Images.SetKeyName(5, "KhungLinh105.bmp");
-            this.imageListButton1to5.Images.SetKeyName(6, "KhungLinh106.bmp");
-            this.imageListButton1to5.Images.SetKeyName(7, "KhungLinh107.bmp");
-            this.imageListButton1to5.Images.SetKeyName(8, "KhungLinh108.bmp");
-            this.imageListButton1to5.Images.SetKeyName(9, "KhungLinh109.bmp");
-            this.imageListButton1to5.Images.SetKeyName(10, "KhungLinh110.bmp");
-            this.imageListButton1to5.Images.SetKeyName(11, "KhungLinh111.bmp");
-            this.imageListButton1to5.Images.SetKeyName(12, "KhungLinh112.bmp");
-            this.imageListButton1to5.Images.SetKeyName(13, "KhungLinh113.bmp");
-            this.imageListButton1to5.Images.SetKeyName(14, "KhungLinh114.bmp");
-            this.imageListButton1to5.Images.SetKeyName(15, "KhungLinh115.bmp");
-            this.imageListButton1to5.Images.SetKeyName(16, "KhungLinh116.bmp");
-            this.imageListButton1to5.Images.SetKeyName(17, "KhungLinh117.bmp");
-            this.imageListButton1to5.Images.SetKeyName(18, "KhungLinh118.bmp");
-            this.imageListButton1to5.Images.SetKeyName(19, "KhungLinh119.bmp");
-            this.imageListButton1to5.Images.SetKeyName(20, "KhungLinh120.bmp");
-            this.imageListButton1to5.Images.SetKeyName(21, "KhungLinh121.bmp");
-            this.imageListButton1to5.Images.SetKeyName(22, "KhungLinh122.bmp");
-            this.imageListButton1to5.Images.SetKeyName(23, "KhungLinh123.bmp");
-            this.imageListButton1to5.Images.SetKeyName(24, "KhungLinh124.bmp");
-            this.imageListButton1to5.Images.SetKeyName(25, "KhungLinh125.bmp");
-            this.imageListButton1to5.Images.SetKeyName(26, "KhungLinh126.bmp");
-            this.imageListButton1to5.Images.SetKeyName(27, "KhungLinh127.bmp");
-            this.imageListButton1to5.Images.SetKeyName(28, "KhungLinh128.bmp");
-            this.imageListButton1to5.Images.SetKeyName(29, "KhungLinh129.bmp");
-            this.imageListButton1to5.Images.SetKeyName(30, "KhungLinh130.bmp");
+            this.imageListButton1to5.Images.SetKeyName(0, "KhungLinh000.bmp");
+            this.imageListButton1to5.Images.SetKeyName(1, "KhungLinh100.bmp");
+            this.imageListButton1to5.Images.SetKeyName(2, "BanNguyetPhai140.bmp");
+            this.imageListButton1to5.Images.SetKeyName(3, "BanNguyetPhai139.bmp");
+            this.imageListButton1to5.Images.SetKeyName(4, "BanNguyetPhai138.bmp");
+            this.imageListButton1to5.Images.SetKeyName(5, "BanNguyetPhai137.bmp");
+            this.imageListButton1to5.Images.SetKeyName(6, "BanNguyetPhai136.bmp");
+            this.imageListButton1to5.Images.SetKeyName(7, "BanNguyetPhai135.bmp");
+            this.imageListButton1to5.Images.SetKeyName(8, "BanNguyetPhai134.bmp");
+            this.imageListButton1to5.Images.SetKeyName(9, "BanNguyetPhai132.bmp");
+            this.imageListButton1to5.Images.SetKeyName(10, "BanNguyetPhai131.bmp");
+            this.imageListButton1to5.Images.SetKeyName(11, "BanNguyetTrai140.bmp");
+            this.imageListButton1to5.Images.SetKeyName(12, "BanNguyetTrai139.bmp");
+            this.imageListButton1to5.Images.SetKeyName(13, "BanNguyetTrai138.bmp");
+            this.imageListButton1to5.Images.SetKeyName(14, "BanNguyetTrai137.bmp");
+            this.imageListButton1to5.Images.SetKeyName(15, "BanNguyetTrai136.bmp");
+            this.imageListButton1to5.Images.SetKeyName(16, "BanNguyetTrai135.bmp");
+            this.imageListButton1to5.Images.SetKeyName(17, "BanNguyetTrai134.bmp");
+            this.imageListButton1to5.Images.SetKeyName(18, "BanNguyetTrai132.bmp");
+            this.imageListButton1to5.Images.SetKeyName(19, "BanNguyetTrai131.bmp");
+            this.imageListButton1to5.Images.SetKeyName(20, "XiaoMi-Mi4-RAM3G.jpg");
+            this.imageListButton1to5.Images.SetKeyName(21, "LENOVO-TAB-3-710I-16GB .jpg");
+            this.imageListButton1to5.Images.SetKeyName(22, "HD4K-LG-55Inch-55UJ632T.png");
+            this.imageListButton1to5.Images.SetKeyName(23, "DaiHocGiaDinh.jpg");
+            this.imageListButton1to5.Images.SetKeyName(24, "BanNguyetTrai130.bmp");
+            this.imageListButton1to5.Images.SetKeyName(25, "BanNguyetTrai129.bmp");
+            this.imageListButton1to5.Images.SetKeyName(26, "BanNguyetTrai128.bmp");
+            this.imageListButton1to5.Images.SetKeyName(27, "BanNguyetTrai126.bmp");
+            this.imageListButton1to5.Images.SetKeyName(28, "BanNguyetPhai130.bmp");
+            this.imageListButton1to5.Images.SetKeyName(29, "BanNguyetPhai129.bmp");
+            this.imageListButton1to5.Images.SetKeyName(30, "BanNguyetPhai128.bmp");
+            this.imageListButton1to5.Images.SetKeyName(31, "BanNguyetPhai127.bmp");
+            this.imageListButton1to5.Images.SetKeyName(32, "BanNguyetPhai126.bmp");
+            this.imageListButton1to5.Images.SetKeyName(33, "BanNguyetTrai125.bmp");
+            this.imageListButton1to5.Images.SetKeyName(34, "BanNguyetTrai124.bmp");
+            this.imageListButton1to5.Images.SetKeyName(35, "BanNguyetTrai123.bmp");
+            this.imageListButton1to5.Images.SetKeyName(36, "BanNguyetTrai121.bmp");
+            this.imageListButton1to5.Images.SetKeyName(37, "BanNguyetTrai025.bmp");
+            this.imageListButton1to5.Images.SetKeyName(38, "BanNguyetTrai024.bmp");
+            this.imageListButton1to5.Images.SetKeyName(39, "BanNguyetTrai023.bmp");
+            this.imageListButton1to5.Images.SetKeyName(40, "BanNguyetTrai022.bmp");
+            this.imageListButton1to5.Images.SetKeyName(41, "BanNguyetTrai021.bmp");
+            this.imageListButton1to5.Images.SetKeyName(42, "BanNguyetPhai125.bmp");
+            this.imageListButton1to5.Images.SetKeyName(43, "BanNguyetPhai124.bmp");
+            this.imageListButton1to5.Images.SetKeyName(44, "BanNguyetPhai123.bmp");
+            this.imageListButton1to5.Images.SetKeyName(45, "BanNguyetPhai121.bmp");
+            this.imageListButton1to5.Images.SetKeyName(46, "BanNguyetPhai025.bmp");
+            this.imageListButton1to5.Images.SetKeyName(47, "BanNguyetPhai024.bmp");
+            this.imageListButton1to5.Images.SetKeyName(48, "BanNguyetPhai023.bmp");
+            this.imageListButton1to5.Images.SetKeyName(49, "BanNguyetPhai022.bmp");
+            this.imageListButton1to5.Images.SetKeyName(50, "BanNguyetPhai021.bmp");
+            this.imageListButton1to5.Images.SetKeyName(51, "KhungLinh130.bmp");
+            this.imageListButton1to5.Images.SetKeyName(52, "KhungLinh129.bmp");
+            this.imageListButton1to5.Images.SetKeyName(53, "KhungLinh128.bmp");
+            this.imageListButton1to5.Images.SetKeyName(54, "KhungLinh126.bmp");
+            this.imageListButton1to5.Images.SetKeyName(55, "KhungLinh030.bmp");
+            this.imageListButton1to5.Images.SetKeyName(56, "KhungLinh029.bmp");
+            this.imageListButton1to5.Images.SetKeyName(57, "KhungLinh028.bmp");
+            this.imageListButton1to5.Images.SetKeyName(58, "KhungLinh027.bmp");
+            this.imageListButton1to5.Images.SetKeyName(59, "KhungLinh026.bmp");
+            this.imageListButton1to5.Images.SetKeyName(60, "KhungLinh125.bmp");
+            this.imageListButton1to5.Images.SetKeyName(61, "KhungLinh124.bmp");
+            this.imageListButton1to5.Images.SetKeyName(62, "KhungLinh123.bmp");
             // 
             // imageListButton7to11
             // 
             this.imageListButton7to11.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton7to11.ImageStream")));
             this.imageListButton7to11.TransparentColor = System.Drawing.Color.Transparent;
             this.imageListButton7to11.Images.SetKeyName(0, "KhungLinh000.bmp");
-            this.imageListButton7to11.Images.SetKeyName(1, "KhungLinh001.bmp");
-            this.imageListButton7to11.Images.SetKeyName(2, "KhungLinh002.bmp");
-            this.imageListButton7to11.Images.SetKeyName(3, "KhungLinh003.bmp");
-            this.imageListButton7to11.Images.SetKeyName(4, "KhungLinh004.bmp");
-            this.imageListButton7to11.Images.SetKeyName(5, "KhungLinh005.bmp");
-            this.imageListButton7to11.Images.SetKeyName(6, "KhungLinh006.bmp");
-            this.imageListButton7to11.Images.SetKeyName(7, "KhungLinh007.bmp");
-            this.imageListButton7to11.Images.SetKeyName(8, "KhungLinh008.bmp");
-            this.imageListButton7to11.Images.SetKeyName(9, "KhungLinh009.bmp");
-            this.imageListButton7to11.Images.SetKeyName(10, "KhungLinh010.bmp");
-            this.imageListButton7to11.Images.SetKeyName(11, "KhungLinh011.bmp");
-            this.imageListButton7to11.Images.SetKeyName(12, "KhungLinh012.bmp");
-            this.imageListButton7to11.Images.SetKeyName(13, "KhungLinh013.bmp");
-            this.imageListButton7to11.Images.SetKeyName(14, "KhungLinh014.bmp");
-            this.imageListButton7to11.Images.SetKeyName(15, "KhungLinh015.bmp");
-            this.imageListButton7to11.Images.SetKeyName(16, "KhungLinh016.bmp");
-            this.imageListButton7to11.Images.SetKeyName(17, "KhungLinh017.bmp");
-            this.imageListButton7to11.Images.SetKeyName(18, "KhungLinh018.bmp");
-            this.imageListButton7to11.Images.SetKeyName(19, "KhungLinh019.bmp");
-            this.imageListButton7to11.Images.SetKeyName(20, "KhungLinh020.bmp");
-            this.imageListButton7to11.Images.SetKeyName(21, "KhungLinh021.bmp");
-            this.imageListButton7to11.Images.SetKeyName(22, "KhungLinh022.bmp");
-            this.imageListButton7to11.Images.SetKeyName(23, "KhungLinh023.bmp");
-            this.imageListButton7to11.Images.SetKeyName(24, "KhungLinh024.bmp");
-            this.imageListButton7to11.Images.SetKeyName(25, "KhungLinh025.bmp");
-            this.imageListButton7to11.Images.SetKeyName(26, "KhungLinh026.bmp");
-            this.imageListButton7to11.Images.SetKeyName(27, "KhungLinh027.bmp");
-            this.imageListButton7to11.Images.SetKeyName(28, "KhungLinh028.bmp");
-            this.imageListButton7to11.Images.SetKeyName(29, "KhungLinh029.bmp");
-            this.imageListButton7to11.Images.SetKeyName(30, "KhungLinh030.bmp");
+            this.imageListButton7to11.Images.SetKeyName(1, "KhungLinh100.bmp");
+            this.imageListButton7to11.Images.SetKeyName(2, "BanNguyetPhai140.bmp");
+            this.imageListButton7to11.Images.SetKeyName(3, "BanNguyetPhai139.bmp");
+            this.imageListButton7to11.Images.SetKeyName(4, "BanNguyetPhai138.bmp");
+            this.imageListButton7to11.Images.SetKeyName(5, "BanNguyetPhai137.bmp");
+            this.imageListButton7to11.Images.SetKeyName(6, "BanNguyetPhai136.bmp");
+            this.imageListButton7to11.Images.SetKeyName(7, "BanNguyetPhai135.bmp");
+            this.imageListButton7to11.Images.SetKeyName(8, "BanNguyetPhai134.bmp");
+            this.imageListButton7to11.Images.SetKeyName(9, "BanNguyetPhai133.bmp");
+            this.imageListButton7to11.Images.SetKeyName(10, "BanNguyetPhai132.bmp");
+            this.imageListButton7to11.Images.SetKeyName(11, "BanNguyetPhai131.bmp");
+            this.imageListButton7to11.Images.SetKeyName(12, "BanNguyetTrai140.bmp");
+            this.imageListButton7to11.Images.SetKeyName(13, "BanNguyetTrai139.bmp");
+            this.imageListButton7to11.Images.SetKeyName(14, "BanNguyetTrai138.bmp");
+            this.imageListButton7to11.Images.SetKeyName(15, "BanNguyetTrai137.bmp");
+            this.imageListButton7to11.Images.SetKeyName(16, "BanNguyetTrai136.bmp");
+            this.imageListButton7to11.Images.SetKeyName(17, "BanNguyetTrai135.bmp");
+            this.imageListButton7to11.Images.SetKeyName(18, "BanNguyetTrai134.bmp");
+            this.imageListButton7to11.Images.SetKeyName(19, "BanNguyetTrai133.bmp");
+            this.imageListButton7to11.Images.SetKeyName(20, "BanNguyetTrai132.bmp");
+            this.imageListButton7to11.Images.SetKeyName(21, "BanNguyetTrai131.bmp");
+            this.imageListButton7to11.Images.SetKeyName(22, "XiaoMi-Mi4-RAM3G.jpg");
+            this.imageListButton7to11.Images.SetKeyName(23, "LENOVO-TAB-3-710I-16GB .jpg");
+            this.imageListButton7to11.Images.SetKeyName(24, "HD4K-LG-55Inch-55UJ632T.png");
+            this.imageListButton7to11.Images.SetKeyName(25, "DaiHocGiaDinh.jpg");
+            this.imageListButton7to11.Images.SetKeyName(26, "BanNguyetTrai130.bmp");
+            this.imageListButton7to11.Images.SetKeyName(27, "BanNguyetTrai129.bmp");
+            this.imageListButton7to11.Images.SetKeyName(28, "BanNguyetTrai128.bmp");
+            this.imageListButton7to11.Images.SetKeyName(29, "BanNguyetTrai127.bmp");
+            this.imageListButton7to11.Images.SetKeyName(30, "BanNguyetTrai126.bmp");
+            this.imageListButton7to11.Images.SetKeyName(31, "BanNguyetPhai130.bmp");
+            this.imageListButton7to11.Images.SetKeyName(32, "BanNguyetPhai129.bmp");
+            this.imageListButton7to11.Images.SetKeyName(33, "BanNguyetPhai128.bmp");
+            this.imageListButton7to11.Images.SetKeyName(34, "BanNguyetPhai127.bmp");
+            this.imageListButton7to11.Images.SetKeyName(35, "BanNguyetPhai126.bmp");
+            this.imageListButton7to11.Images.SetKeyName(36, "BanNguyetTrai125.bmp");
+            this.imageListButton7to11.Images.SetKeyName(37, "BanNguyetTrai124.bmp");
+            this.imageListButton7to11.Images.SetKeyName(38, "BanNguyetTrai123.bmp");
+            this.imageListButton7to11.Images.SetKeyName(39, "BanNguyetTrai122.bmp");
+            this.imageListButton7to11.Images.SetKeyName(40, "BanNguyetTrai121.bmp");
+            this.imageListButton7to11.Images.SetKeyName(41, "BanNguyetTrai025.bmp");
+            this.imageListButton7to11.Images.SetKeyName(42, "BanNguyetTrai024.bmp");
+            this.imageListButton7to11.Images.SetKeyName(43, "BanNguyetTrai023.bmp");
+            this.imageListButton7to11.Images.SetKeyName(44, "BanNguyetTrai022.bmp");
+            this.imageListButton7to11.Images.SetKeyName(45, "BanNguyetTrai021.bmp");
+            this.imageListButton7to11.Images.SetKeyName(46, "BanNguyetPhai125.bmp");
+            this.imageListButton7to11.Images.SetKeyName(47, "BanNguyetPhai124.bmp");
+            this.imageListButton7to11.Images.SetKeyName(48, "BanNguyetPhai123.bmp");
+            this.imageListButton7to11.Images.SetKeyName(49, "BanNguyetPhai122.bmp");
+            this.imageListButton7to11.Images.SetKeyName(50, "BanNguyetPhai121.bmp");
+            this.imageListButton7to11.Images.SetKeyName(51, "BanNguyetPhai025.bmp");
+            this.imageListButton7to11.Images.SetKeyName(52, "BanNguyetPhai024.bmp");
+            this.imageListButton7to11.Images.SetKeyName(53, "BanNguyetPhai023.bmp");
+            this.imageListButton7to11.Images.SetKeyName(54, "BanNguyetPhai022.bmp");
+            this.imageListButton7to11.Images.SetKeyName(55, "BanNguyetPhai021.bmp");
+            this.imageListButton7to11.Images.SetKeyName(56, "KhungLinh130.bmp");
+            this.imageListButton7to11.Images.SetKeyName(57, "KhungLinh129.bmp");
+            this.imageListButton7to11.Images.SetKeyName(58, "KhungLinh128.bmp");
+            this.imageListButton7to11.Images.SetKeyName(59, "KhungLinh127.bmp");
             // 
             // imageListButton6
             // 
             this.imageListButton6.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton6.ImageStream")));
             this.imageListButton6.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton6.Images.SetKeyName(0, "BanNguyetPhai000.bmp");
-            this.imageListButton6.Images.SetKeyName(1, "BanNguyetPhai001.bmp");
-            this.imageListButton6.Images.SetKeyName(2, "BanNguyetPhai002.bmp");
-            this.imageListButton6.Images.SetKeyName(3, "BanNguyetPhai003.bmp");
-            this.imageListButton6.Images.SetKeyName(4, "BanNguyetPhai004.bmp");
-            this.imageListButton6.Images.SetKeyName(5, "BanNguyetPhai005.bmp");
-            this.imageListButton6.Images.SetKeyName(6, "BanNguyetPhai006.bmp");
-            this.imageListButton6.Images.SetKeyName(7, "BanNguyetPhai007.bmp");
-            this.imageListButton6.Images.SetKeyName(8, "BanNguyetPhai008.bmp");
-            this.imageListButton6.Images.SetKeyName(9, "BanNguyetPhai009.bmp");
-            this.imageListButton6.Images.SetKeyName(10, "BanNguyetPhai010.bmp");
-            this.imageListButton6.Images.SetKeyName(11, "BanNguyetPhai011.bmp");
-            this.imageListButton6.Images.SetKeyName(12, "BanNguyetPhai012.bmp");
-            this.imageListButton6.Images.SetKeyName(13, "BanNguyetPhai013.bmp");
-            this.imageListButton6.Images.SetKeyName(14, "BanNguyetPhai014.bmp");
-            this.imageListButton6.Images.SetKeyName(15, "BanNguyetPhai015.bmp");
-            this.imageListButton6.Images.SetKeyName(16, "BanNguyetPhai016.bmp");
-            this.imageListButton6.Images.SetKeyName(17, "BanNguyetPhai017.bmp");
-            this.imageListButton6.Images.SetKeyName(18, "BanNguyetPhai018.bmp");
-            this.imageListButton6.Images.SetKeyName(19, "BanNguyetPhai019.bmp");
-            this.imageListButton6.Images.SetKeyName(20, "BanNguyetPhai020.bmp");
-            this.imageListButton6.Images.SetKeyName(21, "BanNguyetPhai021.bmp");
-            this.imageListButton6.Images.SetKeyName(22, "BanNguyetPhai022.bmp");
-            this.imageListButton6.Images.SetKeyName(23, "BanNguyetPhai023.bmp");
-            this.imageListButton6.Images.SetKeyName(24, "BanNguyetPhai024.bmp");
-            this.imageListButton6.Images.SetKeyName(25, "BanNguyetPhai025.bmp");
+            this.imageListButton6.Images.SetKeyName(0, "KhungLinh000.bmp");
+            this.imageListButton6.Images.SetKeyName(1, "KhungLinh100.bmp");
+            this.imageListButton6.Images.SetKeyName(2, "BanNguyetPhai140.bmp");
+            this.imageListButton6.Images.SetKeyName(3, "BanNguyetPhai139.bmp");
+            this.imageListButton6.Images.SetKeyName(4, "BanNguyetPhai138.bmp");
+            this.imageListButton6.Images.SetKeyName(5, "BanNguyetPhai137.bmp");
+            this.imageListButton6.Images.SetKeyName(6, "BanNguyetPhai136.bmp");
+            this.imageListButton6.Images.SetKeyName(7, "BanNguyetPhai135.bmp");
+            this.imageListButton6.Images.SetKeyName(8, "BanNguyetPhai134.bmp");
+            this.imageListButton6.Images.SetKeyName(9, "BanNguyetPhai133.bmp");
+            this.imageListButton6.Images.SetKeyName(10, "BanNguyetPhai132.bmp");
+            this.imageListButton6.Images.SetKeyName(11, "BanNguyetPhai131.bmp");
+            this.imageListButton6.Images.SetKeyName(12, "BanNguyetTrai140.bmp");
+            this.imageListButton6.Images.SetKeyName(13, "BanNguyetTrai139.bmp");
+            this.imageListButton6.Images.SetKeyName(14, "BanNguyetTrai138.bmp");
+            this.imageListButton6.Images.SetKeyName(15, "BanNguyetTrai137.bmp");
+            this.imageListButton6.Images.SetKeyName(16, "BanNguyetTrai136.bmp");
+            this.imageListButton6.Images.SetKeyName(17, "BanNguyetTrai135.bmp");
+            this.imageListButton6.Images.SetKeyName(18, "BanNguyetTrai134.bmp");
+            this.imageListButton6.Images.SetKeyName(19, "BanNguyetTrai133.bmp");
+            this.imageListButton6.Images.SetKeyName(20, "BanNguyetTrai132.bmp");
+            this.imageListButton6.Images.SetKeyName(21, "BanNguyetTrai131.bmp");
+            this.imageListButton6.Images.SetKeyName(22, "XiaoMi-Mi4-RAM3G.jpg");
+            this.imageListButton6.Images.SetKeyName(23, "LENOVO-TAB-3-710I-16GB .jpg");
+            this.imageListButton6.Images.SetKeyName(24, "HD4K-LG-55Inch-55UJ632T.png");
+            this.imageListButton6.Images.SetKeyName(25, "DaiHocGiaDinh.jpg");
+            this.imageListButton6.Images.SetKeyName(26, "BanNguyetTrai130.bmp");
+            this.imageListButton6.Images.SetKeyName(27, "BanNguyetTrai129.bmp");
+            this.imageListButton6.Images.SetKeyName(28, "BanNguyetTrai128.bmp");
+            this.imageListButton6.Images.SetKeyName(29, "BanNguyetTrai127.bmp");
+            this.imageListButton6.Images.SetKeyName(30, "BanNguyetTrai126.bmp");
+            this.imageListButton6.Images.SetKeyName(31, "BanNguyetPhai130.bmp");
+            this.imageListButton6.Images.SetKeyName(32, "BanNguyetPhai129.bmp");
+            this.imageListButton6.Images.SetKeyName(33, "BanNguyetPhai128.bmp");
+            this.imageListButton6.Images.SetKeyName(34, "BanNguyetPhai127.bmp");
+            this.imageListButton6.Images.SetKeyName(35, "BanNguyetPhai126.bmp");
+            this.imageListButton6.Images.SetKeyName(36, "BanNguyetTrai125.bmp");
+            this.imageListButton6.Images.SetKeyName(37, "BanNguyetTrai124.bmp");
+            this.imageListButton6.Images.SetKeyName(38, "BanNguyetTrai123.bmp");
+            this.imageListButton6.Images.SetKeyName(39, "BanNguyetTrai122.bmp");
+            this.imageListButton6.Images.SetKeyName(40, "BanNguyetTrai121.bmp");
+            this.imageListButton6.Images.SetKeyName(41, "BanNguyetTrai025.bmp");
+            this.imageListButton6.Images.SetKeyName(42, "BanNguyetTrai024.bmp");
+            this.imageListButton6.Images.SetKeyName(43, "BanNguyetTrai023.bmp");
+            this.imageListButton6.Images.SetKeyName(44, "BanNguyetTrai022.bmp");
+            this.imageListButton6.Images.SetKeyName(45, "BanNguyetTrai021.bmp");
+            this.imageListButton6.Images.SetKeyName(46, "BanNguyetPhai125.bmp");
+            this.imageListButton6.Images.SetKeyName(47, "BanNguyetPhai124.bmp");
+            this.imageListButton6.Images.SetKeyName(48, "BanNguyetPhai123.bmp");
+            this.imageListButton6.Images.SetKeyName(49, "BanNguyetPhai122.bmp");
+            this.imageListButton6.Images.SetKeyName(50, "BanNguyetPhai121.bmp");
+            this.imageListButton6.Images.SetKeyName(51, "BanNguyetPhai025.bmp");
+            this.imageListButton6.Images.SetKeyName(52, "BanNguyetPhai024.bmp");
+            this.imageListButton6.Images.SetKeyName(53, "BanNguyetPhai023.bmp");
+            this.imageListButton6.Images.SetKeyName(54, "BanNguyetPhai022.bmp");
+            this.imageListButton6.Images.SetKeyName(55, "BanNguyetPhai021.bmp");
+            this.imageListButton6.Images.SetKeyName(56, "KhungLinh130.bmp");
+            this.imageListButton6.Images.SetKeyName(57, "KhungLinh129.bmp");
+            this.imageListButton6.Images.SetKeyName(58, "KhungLinh128.bmp");
+            this.imageListButton6.Images.SetKeyName(59, "KhungLinh127.bmp");
+            this.imageListButton6.Images.SetKeyName(60, "KhungLinh126.bmp");
+            this.imageListButton6.Images.SetKeyName(61, "KhungLinh030.bmp");
+            this.imageListButton6.Images.SetKeyName(62, "KhungLinh029.bmp");
+            this.imageListButton6.Images.SetKeyName(63, "KhungLinh028.bmp");
+            this.imageListButton6.Images.SetKeyName(64, "KhungLinh027.bmp");
+            this.imageListButton6.Images.SetKeyName(65, "KhungLinh026.bmp");
+            this.imageListButton6.Images.SetKeyName(66, "KhungLinh125.bmp");
+            this.imageListButton6.Images.SetKeyName(67, "KhungLinh124.bmp");
+            this.imageListButton6.Images.SetKeyName(68, "KhungLinh123.bmp");
+            this.imageListButton6.Images.SetKeyName(69, "KhungLinh122.bmp");
+            this.imageListButton6.Images.SetKeyName(70, "KhungLinh121.bmp");
+            this.imageListButton6.Images.SetKeyName(71, "KhungLinh025.bmp");
+            this.imageListButton6.Images.SetKeyName(72, "KhungLinh024.bmp");
+            this.imageListButton6.Images.SetKeyName(73, "KhungLinh023.bmp");
+            this.imageListButton6.Images.SetKeyName(74, "KhungLinh022.bmp");
+            this.imageListButton6.Images.SetKeyName(75, "KhungLinh021.bmp");
+            this.imageListButton6.Images.SetKeyName(76, "BanNguyetPhai020.bmp");
+            this.imageListButton6.Images.SetKeyName(77, "BanNguyetPhai019.bmp");
+            this.imageListButton6.Images.SetKeyName(78, "BanNguyetPhai018.bmp");
+            this.imageListButton6.Images.SetKeyName(79, "BanNguyetPhai017.bmp");
+            this.imageListButton6.Images.SetKeyName(80, "BanNguyetPhai016.bmp");
+            this.imageListButton6.Images.SetKeyName(81, "BanNguyetTrai020.bmp");
+            this.imageListButton6.Images.SetKeyName(82, "BanNguyetTrai019.bmp");
+            this.imageListButton6.Images.SetKeyName(83, "BanNguyetTrai018.bmp");
+            this.imageListButton6.Images.SetKeyName(84, "BanNguyetTrai017.bmp");
+            this.imageListButton6.Images.SetKeyName(85, "BanNguyetTrai016.bmp");
+            this.imageListButton6.Images.SetKeyName(86, "BanNguyetTrai120.bmp");
+            this.imageListButton6.Images.SetKeyName(87, "BanNguyetTrai119.bmp");
+            this.imageListButton6.Images.SetKeyName(88, "BanNguyetTrai118.bmp");
+            this.imageListButton6.Images.SetKeyName(89, "BanNguyetTrai117.bmp");
+            this.imageListButton6.Images.SetKeyName(90, "BanNguyetTrai116.bmp");
+            this.imageListButton6.Images.SetKeyName(91, "BanNguyetPhai120.bmp");
+            this.imageListButton6.Images.SetKeyName(92, "BanNguyetPhai119.bmp");
+            this.imageListButton6.Images.SetKeyName(93, "BanNguyetPhai118.bmp");
+            this.imageListButton6.Images.SetKeyName(94, "BanNguyetPhai117.bmp");
+            this.imageListButton6.Images.SetKeyName(95, "BanNguyetPhai116.bmp");
+            this.imageListButton6.Images.SetKeyName(96, "BanNguyetPhai115.bmp");
+            this.imageListButton6.Images.SetKeyName(97, "BanNguyetPhai114.bmp");
+            this.imageListButton6.Images.SetKeyName(98, "BanNguyetPhai113.bmp");
+            this.imageListButton6.Images.SetKeyName(99, "BanNguyetPhai112.bmp");
+            this.imageListButton6.Images.SetKeyName(100, "BanNguyetPhai111.bmp");
+            this.imageListButton6.Images.SetKeyName(101, "BanNguyetPhai110.bmp");
+            this.imageListButton6.Images.SetKeyName(102, "BanNguyetPhai109.bmp");
+            this.imageListButton6.Images.SetKeyName(103, "BanNguyetPhai108.bmp");
+            this.imageListButton6.Images.SetKeyName(104, "BanNguyetPhai107.bmp");
+            this.imageListButton6.Images.SetKeyName(105, "BanNguyetPhai106.bmp");
+            this.imageListButton6.Images.SetKeyName(106, "BanNguyetTrai115.bmp");
+            this.imageListButton6.Images.SetKeyName(107, "BanNguyetTrai114.bmp");
+            this.imageListButton6.Images.SetKeyName(108, "BanNguyetTrai113.bmp");
+            this.imageListButton6.Images.SetKeyName(109, "BanNguyetTrai112.bmp");
+            this.imageListButton6.Images.SetKeyName(110, "BanNguyetTrai111.bmp");
+            this.imageListButton6.Images.SetKeyName(111, "BanNguyetTrai110.bmp");
+            this.imageListButton6.Images.SetKeyName(112, "BanNguyetTrai109.bmp");
+            this.imageListButton6.Images.SetKeyName(113, "BanNguyetTrai108.bmp");
+            this.imageListButton6.Images.SetKeyName(114, "BanNguyetTrai107.bmp");
+            this.imageListButton6.Images.SetKeyName(115, "BanNguyetTrai106.bmp");
+            this.imageListButton6.Images.SetKeyName(116, "BanNguyetPhai015.bmp");
+            this.imageListButton6.Images.SetKeyName(117, "BanNguyetPhai014.bmp");
+            this.imageListButton6.Images.SetKeyName(118, "BanNguyetPhai013.bmp");
+            this.imageListButton6.Images.SetKeyName(119, "BanNguyetPhai012.bmp");
+            this.imageListButton6.Images.SetKeyName(120, "BanNguyetPhai011.bmp");
+            this.imageListButton6.Images.SetKeyName(121, "BanNguyetPhai010.bmp");
+            this.imageListButton6.Images.SetKeyName(122, "BanNguyetPhai009.bmp");
+            this.imageListButton6.Images.SetKeyName(123, "BanNguyetPhai008.bmp");
+            this.imageListButton6.Images.SetKeyName(124, "BanNguyetPhai007.bmp");
+            this.imageListButton6.Images.SetKeyName(125, "BanNguyetPhai006.bmp");
+            this.imageListButton6.Images.SetKeyName(126, "BanNguyetTrai015.bmp");
+            this.imageListButton6.Images.SetKeyName(127, "BanNguyetTrai014.bmp");
+            this.imageListButton6.Images.SetKeyName(128, "BanNguyetTrai013.bmp");
+            this.imageListButton6.Images.SetKeyName(129, "BanNguyetTrai012.bmp");
             // 
             // imageListButton12
             // 
             this.imageListButton12.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton12.ImageStream")));
             this.imageListButton12.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton12.Images.SetKeyName(0, "BanNguyetTrai000.bmp");
-            this.imageListButton12.Images.SetKeyName(1, "BanNguyetTrai001.bmp");
-            this.imageListButton12.Images.SetKeyName(2, "BanNguyetTrai002.bmp");
-            this.imageListButton12.Images.SetKeyName(3, "BanNguyetTrai003.bmp");
-            this.imageListButton12.Images.SetKeyName(4, "BanNguyetTrai004.bmp");
-            this.imageListButton12.Images.SetKeyName(5, "BanNguyetTrai005.bmp");
-            this.imageListButton12.Images.SetKeyName(6, "BanNguyetTrai006.bmp");
-            this.imageListButton12.Images.SetKeyName(7, "BanNguyetTrai007.bmp");
-            this.imageListButton12.Images.SetKeyName(8, "BanNguyetTrai008.bmp");
-            this.imageListButton12.Images.SetKeyName(9, "BanNguyetTrai009.bmp");
-            this.imageListButton12.Images.SetKeyName(10, "BanNguyetTrai010.bmp");
-            this.imageListButton12.Images.SetKeyName(11, "BanNguyetTrai011.bmp");
-            this.imageListButton12.Images.SetKeyName(12, "BanNguyetTrai012.bmp");
-            this.imageListButton12.Images.SetKeyName(13, "BanNguyetTrai013.bmp");
-            this.imageListButton12.Images.SetKeyName(14, "BanNguyetTrai014.bmp");
-            this.imageListButton12.Images.SetKeyName(15, "BanNguyetTrai015.bmp");
-            this.imageListButton12.Images.SetKeyName(16, "BanNguyetTrai016.bmp");
-            this.imageListButton12.Images.SetKeyName(17, "BanNguyetTrai017.bmp");
-            this.imageListButton12.Images.SetKeyName(18, "BanNguyetTrai018.bmp");
-            this.imageListButton12.Images.SetKeyName(19, "BanNguyetTrai019.bmp");
-            this.imageListButton12.Images.SetKeyName(20, "BanNguyetTrai020.bmp");
-            this.imageListButton12.Images.SetKeyName(21, "BanNguyetTrai021.bmp");
-            this.imageListButton12.Images.SetKeyName(22, "BanNguyetTrai022.bmp");
-            this.imageListButton12.Images.SetKeyName(23, "BanNguyetTrai023.bmp");
-            this.imageListButton12.Images.SetKeyName(24, "BanNguyetTrai024.bmp");
-            this.imageListButton12.Images.SetKeyName(25, "BanNguyetTrai025.bmp");
+            this.imageListButton12.Images.SetKeyName(0, "KhungLinh000.bmp");
+            this.imageListButton12.Images.SetKeyName(1, "KhungLinh100.bmp");
+            this.imageListButton12.Images.SetKeyName(2, "BanNguyetPhai140.bmp");
+            this.imageListButton12.Images.SetKeyName(3, "BanNguyetPhai139.bmp");
+            this.imageListButton12.Images.SetKeyName(4, "BanNguyetPhai138.bmp");
+            this.imageListButton12.Images.SetKeyName(5, "BanNguyetPhai137.bmp");
+            this.imageListButton12.Images.SetKeyName(6, "BanNguyetPhai136.bmp");
+            this.imageListButton12.Images.SetKeyName(7, "BanNguyetPhai135.bmp");
+            this.imageListButton12.Images.SetKeyName(8, "BanNguyetPhai134.bmp");
+            this.imageListButton12.Images.SetKeyName(9, "BanNguyetPhai133.bmp");
+            this.imageListButton12.Images.SetKeyName(10, "BanNguyetPhai132.bmp");
+            this.imageListButton12.Images.SetKeyName(11, "BanNguyetPhai131.bmp");
+            this.imageListButton12.Images.SetKeyName(12, "BanNguyetTrai140.bmp");
+            this.imageListButton12.Images.SetKeyName(13, "BanNguyetTrai139.bmp");
+            this.imageListButton12.Images.SetKeyName(14, "BanNguyetTrai138.bmp");
+            this.imageListButton12.Images.SetKeyName(15, "BanNguyetTrai137.bmp");
+            this.imageListButton12.Images.SetKeyName(16, "BanNguyetTrai136.bmp");
+            this.imageListButton12.Images.SetKeyName(17, "BanNguyetTrai135.bmp");
+            this.imageListButton12.Images.SetKeyName(18, "BanNguyetTrai134.bmp");
+            this.imageListButton12.Images.SetKeyName(19, "BanNguyetTrai133.bmp");
+            this.imageListButton12.Images.SetKeyName(20, "BanNguyetTrai132.bmp");
+            this.imageListButton12.Images.SetKeyName(21, "BanNguyetTrai131.bmp");
+            this.imageListButton12.Images.SetKeyName(22, "XiaoMi-Mi4-RAM3G.jpg");
+            this.imageListButton12.Images.SetKeyName(23, "LENOVO-TAB-3-710I-16GB .jpg");
+            this.imageListButton12.Images.SetKeyName(24, "HD4K-LG-55Inch-55UJ632T.png");
+            this.imageListButton12.Images.SetKeyName(25, "DaiHocGiaDinh.jpg");
+            this.imageListButton12.Images.SetKeyName(26, "BanNguyetTrai130.bmp");
+            this.imageListButton12.Images.SetKeyName(27, "BanNguyetTrai129.bmp");
+            this.imageListButton12.Images.SetKeyName(28, "BanNguyetTrai128.bmp");
+            this.imageListButton12.Images.SetKeyName(29, "BanNguyetTrai127.bmp");
+            this.imageListButton12.Images.SetKeyName(30, "BanNguyetTrai126.bmp");
+            this.imageListButton12.Images.SetKeyName(31, "BanNguyetPhai130.bmp");
+            this.imageListButton12.Images.SetKeyName(32, "BanNguyetPhai129.bmp");
+            this.imageListButton12.Images.SetKeyName(33, "BanNguyetPhai128.bmp");
+            this.imageListButton12.Images.SetKeyName(34, "BanNguyetPhai127.bmp");
+            this.imageListButton12.Images.SetKeyName(35, "BanNguyetPhai126.bmp");
+            this.imageListButton12.Images.SetKeyName(36, "BanNguyetTrai125.bmp");
+            this.imageListButton12.Images.SetKeyName(37, "BanNguyetTrai124.bmp");
+            this.imageListButton12.Images.SetKeyName(38, "BanNguyetTrai123.bmp");
+            this.imageListButton12.Images.SetKeyName(39, "BanNguyetTrai122.bmp");
+            this.imageListButton12.Images.SetKeyName(40, "BanNguyetTrai121.bmp");
+            this.imageListButton12.Images.SetKeyName(41, "BanNguyetTrai025.bmp");
+            this.imageListButton12.Images.SetKeyName(42, "BanNguyetTrai024.bmp");
+            this.imageListButton12.Images.SetKeyName(43, "BanNguyetTrai023.bmp");
+            this.imageListButton12.Images.SetKeyName(44, "BanNguyetTrai022.bmp");
+            this.imageListButton12.Images.SetKeyName(45, "BanNguyetTrai021.bmp");
+            this.imageListButton12.Images.SetKeyName(46, "BanNguyetPhai125.bmp");
+            this.imageListButton12.Images.SetKeyName(47, "BanNguyetPhai124.bmp");
+            this.imageListButton12.Images.SetKeyName(48, "BanNguyetPhai123.bmp");
+            this.imageListButton12.Images.SetKeyName(49, "BanNguyetPhai122.bmp");
+            this.imageListButton12.Images.SetKeyName(50, "BanNguyetPhai121.bmp");
+            this.imageListButton12.Images.SetKeyName(51, "BanNguyetPhai025.bmp");
+            this.imageListButton12.Images.SetKeyName(52, "BanNguyetPhai024.bmp");
+            this.imageListButton12.Images.SetKeyName(53, "BanNguyetPhai023.bmp");
+            this.imageListButton12.Images.SetKeyName(54, "BanNguyetPhai022.bmp");
+            this.imageListButton12.Images.SetKeyName(55, "BanNguyetPhai021.bmp");
+            this.imageListButton12.Images.SetKeyName(56, "KhungLinh130.bmp");
+            this.imageListButton12.Images.SetKeyName(57, "KhungLinh129.bmp");
+            this.imageListButton12.Images.SetKeyName(58, "KhungLinh128.bmp");
+            this.imageListButton12.Images.SetKeyName(59, "KhungLinh127.bmp");
+            this.imageListButton12.Images.SetKeyName(60, "KhungLinh126.bmp");
+            this.imageListButton12.Images.SetKeyName(61, "KhungLinh030.bmp");
+            this.imageListButton12.Images.SetKeyName(62, "KhungLinh029.bmp");
+            this.imageListButton12.Images.SetKeyName(63, "KhungLinh028.bmp");
+            this.imageListButton12.Images.SetKeyName(64, "KhungLinh027.bmp");
+            this.imageListButton12.Images.SetKeyName(65, "KhungLinh026.bmp");
+            this.imageListButton12.Images.SetKeyName(66, "KhungLinh125.bmp");
+            this.imageListButton12.Images.SetKeyName(67, "KhungLinh124.bmp");
+            this.imageListButton12.Images.SetKeyName(68, "KhungLinh123.bmp");
+            this.imageListButton12.Images.SetKeyName(69, "KhungLinh122.bmp");
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.button15);
             this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.button14);
-            this.panel1.Location = new System.Drawing.Point(283, 408);
+            this.panel1.Location = new System.Drawing.Point(284, 408);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 89);
@@ -503,18 +720,92 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(37, 37);
+            this.groupBox1.Location = new System.Drawing.Point(37, 38);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Size = new System.Drawing.Size(785, 469);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ô ăn quan - Made by Nhóm 16";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(374, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(112, 26);
+            this.textBox3.TabIndex = 11;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(374, 504);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(112, 26);
+            this.textBox4.TabIndex = 11;
+            // 
+            // imageListQuan6
+            // 
+            this.imageListQuan6.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageListQuan6.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageListQuan6.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // imageListQuan12
+            // 
+            this.imageListQuan12.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageListQuan12.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageListQuan12.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(308, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Time:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(308, 506);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Time:";
+            // 
+            // lb1name
+            // 
+            this.lb1name.AutoSize = true;
+            this.lb1name.Location = new System.Drawing.Point(530, 9);
+            this.lb1name.Name = "lb1name";
+            this.lb1name.Size = new System.Drawing.Size(18, 20);
+            this.lb1name.TabIndex = 13;
+            this.lb1name.Text = "1";
+            // 
+            // lb2name
+            // 
+            this.lb2name.AutoSize = true;
+            this.lb2name.Location = new System.Drawing.Point(531, 506);
+            this.lb2name.Name = "lb2name";
+            this.lb2name.Size = new System.Drawing.Size(18, 20);
+            this.lb2name.TabIndex = 14;
+            this.lb2name.Text = "1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 544);
+            this.ClientSize = new System.Drawing.Size(854, 544);
+            this.Controls.Add(this.lb2name);
+            this.Controls.Add(this.lb1name);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelPlayerTurn);
             this.Controls.Add(this.textBox2);
@@ -535,7 +826,6 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MainForm";
             this.Text = "Ô ăn quan - Made by Nhóm 16";
@@ -578,6 +868,14 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ImageList imageListQuan6;
+        private System.Windows.Forms.ImageList imageListQuan12;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lb1name;
+        private System.Windows.Forms.Label lb2name;
     }
 }
 
