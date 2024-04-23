@@ -130,13 +130,8 @@ namespace WindowsFormsApp1
         {
             if (player1Turn)
                 StartPlayer1Turn();
-
             else
-            {
-                player1Turn = false;
                 StartPlayer2Turn();
-            }
-
             // Nếu nút có giá trị là 0, không làm gì cả
             if ((sender as Button).Text == "0")
                 return;
@@ -150,10 +145,17 @@ namespace WindowsFormsApp1
                     panel2.Visible = true; // Hiển thị panel cho player 1
                 else if (!player1Turn && position >= 7) // Kiểm tra lượt của player 2
                     panel1.Visible = true; // Hiển thị panel cho player 2
+                ClientSocket.dataHeader = "CLICK";
+                string data = value.ToString() + "|" + position.ToString();
+                ClientSocket.SendData(data);
             }
 
         }
 
+        public void changeturn()
+        {
+            player1Turn = !player1Turn;
+        }
 
         //check 2 buttons after the button chosen.
         private void getscoreright(int position)
@@ -184,31 +186,7 @@ namespace WindowsFormsApp1
                 //then check the next button
                 if (btn2.Text != "0")
                 {
-                    if (btn2.Name == "button6")
-                    {
-                        if (player1Turn)
-                            textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        else
-                            textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        MessageBox.Show("Người chơi ăn được quan.");
-                        quan6 = false;
-                    }
-                    else if (btn2.Name == "button12")
-                    {
-                        if (player1Turn)
-                            textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        else
-                            textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        MessageBox.Show("Người chơi ăn được quan.");
-                        quan12 = false;
-                    }
-                    else
-                    {
-                        if (player1Turn)
-                            textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text)).ToString();
-                        else
-                            textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text)).ToString();
-                    }
+                    updatescore(btn2);
                     btn2.Text = "0";
                     getscoreright(position - 2);
                 }
@@ -245,31 +223,7 @@ namespace WindowsFormsApp1
                     btn2 = this.Controls["button" + (position + 2).ToString()] as Button;
                 if (btn2.Text != "0")
                 {
-                    if (btn2.Name == "button6")
-                    {
-                        if (player1Turn)
-                            textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        else
-                            textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        MessageBox.Show("Người chơi ăn được quan.");
-                        quan6 = false;
-                    }
-                    else if (btn2.Name == "button12")
-                    {
-                        if (player1Turn)
-                            textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        else
-                            textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text) + 9).ToString();
-                        MessageBox.Show("Người chơi ăn được quan.");
-                        quan12 = false;
-                    }
-                    else
-                    {
-                        if (player1Turn)
-                            textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text)).ToString();
-                        else
-                            textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text)).ToString();
-                    }
+                    updatescore(btn2);
                     btn2.Text = "0";
                     getscoreleft(position);
                 }
@@ -280,9 +234,41 @@ namespace WindowsFormsApp1
                 return;
         }
 
-        //recursive function to move the value to the left until meet the QUAN or meet a button with 0 value
-        public async Task goleft(int value, int position)
+        private void updatescore(object sender)
         {
+            Button btn2 = sender as Button;
+            if (btn2.Name == "button6" && quan6)
+            {
+                if (player1Turn)
+                    textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text) + 9).ToString();
+                else
+                    textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text) + 9).ToString();
+                MessageBox.Show("Người chơi ăn được quan.");
+                quan6 = false;
+            }
+            else if (btn2.Name == "button12" && quan12)
+            {
+                if (player1Turn)
+                    textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text) + 9).ToString();
+                else
+                    textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text) + 9).ToString();
+                MessageBox.Show("Người chơi ăn được quan.");
+                quan12 = false;
+            }
+            else
+            {
+                if (player1Turn)
+                    textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(btn2.Text)).ToString();
+                else
+                    textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(btn2.Text)).ToString();
+            }
+        }
+
+        //recursive function to move the value to the left until meet the QUAN or meet a button with 0 value
+        public async Task goleft(int value, int position,bool playerturn)
+        {
+            panel1.Visible = false;
+            panel2.Visible = false;
             for (int i = value; i != 0; i--)
             {
                 await Task.Delay(500); // Delay for 0.5 seconds
@@ -317,7 +303,7 @@ namespace WindowsFormsApp1
             {
                 value = int.Parse(nextBtn.Text);
                 nextBtn.Text = "0";
-                await goleft(value, position + 1);
+                await goleft(value, position + 1,playerturn);
             }
             else
                 getscoreleft(position);
@@ -341,8 +327,10 @@ namespace WindowsFormsApp1
         }
 
         //same ideas as goleft
-        public async Task goright(int value, int position)
+        public async Task goright(int value, int position, bool playerturn)
         {
+            panel1.Visible = false;
+            panel2.Visible = false;
             for (int i = value; i != 0; i--)
             {
                 await Task.Delay(500); // Delay for 0.5 seconds
@@ -376,7 +364,7 @@ namespace WindowsFormsApp1
             {
                 value = int.Parse(nextBtn.Text);
                 nextBtn.Text = "0";
-                await goright(value, position - 1);
+                await goright(value, position - 1,playerturn);
             }
             else
             {
@@ -390,7 +378,11 @@ namespace WindowsFormsApp1
             }
 
             if (checkrowabove())
+            { 
                 updaterow(1);
+                if (checkrowbelow())
+                    updaterow(2);
+            }
             else if (checkrowbelow())
                 updaterow(2);
             else
@@ -479,7 +471,7 @@ namespace WindowsFormsApp1
 
 
         // Sự kiện click nút cho các nút trong panel của player 1
-        private void buttonOpt_Click(object sender, EventArgs e)
+        public void buttonOpt_Click(object sender, EventArgs e)
         {
             player1Timer.Stop(); // Stop the timer for player 1
             player2Timer.Stop(); // Stop the timer for player 2
@@ -491,29 +483,33 @@ namespace WindowsFormsApp1
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
-                //await goright(value, position);
-                goright(value, position);
                 ClientSocket.dataHeader = "RIGHT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
                 ClientSocket.SendData(data);
             }
             else if (option == "Left")
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
-                goleft(value, position);
-                //await goleft(value, position);
                 ClientSocket.dataHeader = "LEFT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
                 ClientSocket.SendData(data);
             }
-            player1Turn = !player1Turn; // Chuyển lượt cho player 2
-            player2Timer.Start();
         }
 
-        
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            StartPlayer1Turn();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            player1Timer.Stop();
+            player2Timer.Stop();
+        }
+
         // Sự kiện click nút cho các nút trong panel của player 2
-        private void buttonOpt_Click_Player2(object sender, EventArgs e)
+        public void buttonOpt_Click_Player2(object sender, EventArgs e)
         {
             player1Timer.Stop(); // Stop the timer for player 1
             player2Timer.Stop(); // Stop the timer for player 2
@@ -526,24 +522,18 @@ namespace WindowsFormsApp1
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
-                goright(value, position);
-                //await goright(value, position);
                 ClientSocket.dataHeader = "RIGHT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
                 ClientSocket.SendData(data);
             }
             else if (option == "Left")
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
-                goleft(value, position);
-                //await goleft(value, position);
                 ClientSocket.dataHeader = "LEFT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
                 ClientSocket.SendData(data);
             }
-            player1Turn = !player1Turn; // Chuyển lượt cho player 1
-            player1Timer.Start();
         }        
     }
 }

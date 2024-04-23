@@ -15,6 +15,7 @@ namespace Server
         private static Socket client;
         private static Thread clientThread;
         private static List<Player> connectedPlayers = new List<Player>();
+        public static string host;
 
         static void Main(string[] args)
         {
@@ -70,6 +71,8 @@ namespace Server
                     {
                         player.name = PayLoad[1];
 
+                        host = player.name;
+
                         byte[] data = Encoding.UTF8.GetBytes("CREATED|" + player.name); 
 
                         player.playerSocket.Send(data);
@@ -114,17 +117,47 @@ namespace Server
                     break;
                 case "START":
                     {
+                        foreach (var p in connectedPlayers)
+                        {
+                            if (p.name == host)
+                            {
+                                string tn = "HOST|" + host;
+                                foreach(var p2 in connectedPlayers)
+                                {
+                                    if(p2.name != host)
+                                    {
+                                        tn += "|" + p2.name;
+                                    }
+                                }
+                                byte[] hostdata = Encoding.UTF8.GetBytes(tn);
+                                p.playerSocket.Send(hostdata);
+                                Console.WriteLine("Sendback: " + tn);
+                                Thread.Sleep(100);
+                            }
+                            else
+                            {
+                                string message = "INIT|";
+                                foreach (var p2 in connectedPlayers)
+                                {
+                                    message += p2.name + "|";
+                                }
+                                byte[] data = Encoding.UTF8.GetBytes(message);
+                                p.playerSocket.Send(data);
+                                Console.WriteLine("Sendback: " + message);
+                                Thread.Sleep(100);
+                            }                        
+                        }
+                    }
+                    break;
+                case "CLICK":
+                    {
                         foreach(var p in connectedPlayers)
                         {
-                            string message = "INIT|";
-                            foreach(var p2 in connectedPlayers)
-                            {
-                                message += p2.name + "|";
-                            }
+                            string value = PayLoad[1];
+                            string position = PayLoad[2];
+                            string message = "CLICKED|" + value + "|" + position;
                             byte[] data = Encoding.UTF8.GetBytes(message);
                             p.playerSocket.Send(data);
-                            Console.WriteLine("Sendback: " + message);
-                            Thread.Sleep(100);
                         }
                     }
                     break;
@@ -133,15 +166,15 @@ namespace Server
                         string name = PayLoad[4];
                         foreach (var p in connectedPlayers)
                         {
-                            if (p.name != name)
-                            {
+                            //if (p.name != name)
+                            //{
                                 string position = PayLoad[2];
                                 string value = PayLoad[1];
                                 string player1turn = PayLoad[3];
-                                string message = "RIGHT|" + value + "|" + position + "|" + player1turn;
+                                string message = "GORIGHT|" + value + "|" + position + "|" + player1turn;
                                 byte[] data = Encoding.UTF8.GetBytes(message);
                                 p.playerSocket.Send(data);
-                            }
+                            //}
                         }
                     }
                     break;
@@ -150,16 +183,16 @@ namespace Server
                         string name = PayLoad[4];
                         foreach (var p in connectedPlayers)
                         {
-                            if(p.name != name)
-                            {
+                            //if (p.name != name)
+                            //{
                                 string position = PayLoad[2];
                                 string value = PayLoad[1];
                                 //Console.WriteLine("Value: " + PayLoad[3]);
                                 string player1turn = PayLoad[3];
-                                string message = "LEFT|" + value + "|" + position + "|" + player1turn;
+                                string message = "GOLEFT|" + value + "|" + position + "|" + player1turn;
                                 byte[] data = Encoding.UTF8.GetBytes(message);
                                 p.playerSocket.Send(data);
-                            }
+                            //}
                         }
                     }
                     break;

@@ -55,6 +55,7 @@ namespace OAnQuan
         }
 
         public static MainForm mainForm;
+        public static bool player1Turn;
    
         public static void AnalyzeMessage(string msg)
         {
@@ -63,10 +64,24 @@ namespace OAnQuan
             switch (PayLoad[0])
             {
                 case "CREATED":
-                    MenuForm.lobby.DisplayPlayer(PayLoad[1]);
+                    {
+                        MenuForm.lobby.ShowbtnStart();
+                        MenuForm.lobby.DisplayPlayer(PayLoad[1]);
+                    }
                     break;
                 case "CONNECTED":
                     MenuForm.lobby.DisplayPlayer(PayLoad[1]);
+                    break;
+                case "HOST":
+                    {
+                        mainForm = new MainForm(PayLoad[1], PayLoad[2]);
+                        MenuForm.lobby.Invoke((MethodInvoker)delegate
+                        {
+                            //MenuForm.lobby.Hide();
+                            mainForm.Text = "Host";
+                            mainForm.Show();
+                        });
+                    }
                     break;
                 case "INIT":
                     {
@@ -74,55 +89,57 @@ namespace OAnQuan
                         MenuForm.lobby.Invoke((MethodInvoker)delegate
                         {
                             //MenuForm.lobby.Hide();
+                            mainForm.Text = "Client";
                             mainForm.Show();
                         });
                     }
                     break;
-                case "RIGHT":
+                case "CLICKED":
                     {
                         mainForm.Invoke((MethodInvoker)delegate
                         {
-                            (mainForm.Controls["button" + PayLoad[2]] as Button).Text = "0";
-                            if (PayLoad[3] == "true")
-                            {
-                                Player2.turn = 0;
-                                Player1.turn = 1;
-                            }
-                            else
-                            {
-                                Player1.turn = 0;
-                                Player2.turn = 1;
-                            }
-
-                            if (Player1.turn == 1)
-                                mainForm.StartPlayer1Turn();
-                            else
-                                mainForm.StartPlayer2Turn();
-                            _ = mainForm.goright(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]));
+                            Button btn = mainForm.Controls["button" + PayLoad[2]] as Button;
+                            btn.Focus();
                         });
                     }
                     break;
-                case "LEFT":
+                case "GORIGHT":
                     {
-                        mainForm.Invoke((MethodInvoker)delegate
+                        mainForm.Invoke((MethodInvoker)async delegate
                         {
                             (mainForm.Controls["button" + PayLoad[2]] as Button).Text = "0";
-                            if (PayLoad[3] == "true")
+                            if (PayLoad[3].ToLower() == "true")
                             {
-                                Player2.turn = 0;
-                                Player1.turn = 1;
-                            }
-                            else
-                            {
-                                Player1.turn = 0;
-                                Player2.turn = 1;
-                            }
-
-                            if (Player1.turn == 1)
+                                player1Turn = true;
                                 mainForm.StartPlayer1Turn();
+                            }
                             else
+                            {
+                                player1Turn = false;
                                 mainForm.StartPlayer2Turn();
-                            _ = mainForm.goleft(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]));
+                            }
+                            await mainForm.goright(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]),player1Turn);
+                            mainForm.changeturn();
+                        });
+                    }
+                    break;
+                case "GOLEFT":
+                    {
+                        mainForm.Invoke((MethodInvoker)async delegate
+                        {
+                            (mainForm.Controls["button" + PayLoad[2]] as Button).Text = "0";
+                            if (PayLoad[3].ToLower() == "true")
+                            {
+                                player1Turn = true;
+                                mainForm.StartPlayer1Turn();
+                            }
+                            else
+                            {
+                                player1Turn = false;
+                                mainForm.StartPlayer2Turn();
+                            }
+                            await mainForm.goleft(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]),player1Turn);
+                            mainForm.changeturn();
                         });
                     }
                     break;

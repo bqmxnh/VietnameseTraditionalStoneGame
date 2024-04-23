@@ -23,6 +23,8 @@ namespace OAnQuan
 
             lobby = this;
 
+            btnStart.Hide();
+
             PlayerName.Add(label1);
             PlayerName.Add(label2);
         }
@@ -41,6 +43,11 @@ namespace OAnQuan
                 default:
                     break;
             }
+        }
+
+        public void ShowbtnStart()
+        {
+            btnStart.Show();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
