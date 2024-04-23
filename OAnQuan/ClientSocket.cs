@@ -79,6 +79,7 @@ namespace OAnQuan
                         {
                             //MenuForm.lobby.Hide();
                             mainForm.Text = "Host";
+                            mainForm.changeMode(true);
                             mainForm.Show();
                         });
                     }
@@ -90,6 +91,7 @@ namespace OAnQuan
                         {
                             //MenuForm.lobby.Hide();
                             mainForm.Text = "Client";
+                            mainForm.changeMode(false);
                             mainForm.Show();
                         });
                     }

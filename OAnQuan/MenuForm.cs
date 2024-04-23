@@ -71,12 +71,12 @@ namespace OAnQuan
         
         private void Menu_Shown(object sender, EventArgs e)
         {
-            /*tbIP.Text = GetIPv4(NetworkInterfaceType.Wireless80211);
+            tbIP.Text = GetIPv4(NetworkInterfaceType.Wireless80211);
             
             if(string.IsNullOrEmpty(tbIP.Text))
             {
                 tbIP.Text = GetIPv4(NetworkInterfaceType.Ethernet);
-            }*/
+            }
         }
 
         private string GetIPv4(NetworkInterfaceType type)

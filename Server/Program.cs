@@ -141,6 +141,7 @@ namespace Server
                                 {
                                     message += p2.name + "|";
                                 }
+                                message += 2.ToString();
                                 byte[] data = Encoding.UTF8.GetBytes(message);
                                 p.playerSocket.Send(data);
                                 Console.WriteLine("Sendback: " + message);
@@ -166,15 +167,13 @@ namespace Server
                         string name = PayLoad[4];
                         foreach (var p in connectedPlayers)
                         {
-                            //if (p.name != name)
-                            //{
-                                string position = PayLoad[2];
-                                string value = PayLoad[1];
-                                string player1turn = PayLoad[3];
-                                string message = "GORIGHT|" + value + "|" + position + "|" + player1turn;
-                                byte[] data = Encoding.UTF8.GetBytes(message);
-                                p.playerSocket.Send(data);
-                            //}
+                            string position = PayLoad[2];
+                            string value = PayLoad[1];
+                            string player1turn = PayLoad[3];
+                            string message = "GORIGHT|" + value + "|" + position + "|" + player1turn;
+                            byte[] data = Encoding.UTF8.GetBytes(message);
+                            p.playerSocket.Send(data);
+                            
                         }
                     }
                     break;
@@ -183,17 +182,13 @@ namespace Server
                         string name = PayLoad[4];
                         foreach (var p in connectedPlayers)
                         {
-                            //if (p.name != name)
-                            //{
-                                string position = PayLoad[2];
-                                string value = PayLoad[1];
-                                //Console.WriteLine("Value: " + PayLoad[3]);
-                                string player1turn = PayLoad[3];
-                                string message = "GOLEFT|" + value + "|" + position + "|" + player1turn;
-                                byte[] data = Encoding.UTF8.GetBytes(message);
-                                p.playerSocket.Send(data);
-                            //}
-                        }
+                            string position = PayLoad[2];
+                            string value = PayLoad[1];
+                            string player1turn = PayLoad[3];
+                            string message = "GOLEFT|" + value + "|" + position + "|" + player1turn;
+                            byte[] data = Encoding.UTF8.GetBytes(message);
+                            p.playerSocket.Send(data);
+                    }
                     }
                     break;
                 default:

@@ -11,6 +11,7 @@ namespace OAnQuan
         public static string name { get; set; }
         public static int turn { get; set; }
         public static int score { get; set; }
+        public static string name1 = "a"; 
     }
 
     internal class Player2
@@ -18,5 +19,6 @@ namespace OAnQuan
         public static string name { get; set; }
         public static int turn { get; set; }
         public static int score { get; set; }
+        public static string name2 = "b";
     }
 }

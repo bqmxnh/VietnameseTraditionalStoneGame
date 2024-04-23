@@ -11,7 +11,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
@@ -483,18 +482,24 @@ namespace WindowsFormsApp1
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
+                //await goright(value, position);
+                //goright(value, position,player1Turn);
                 ClientSocket.dataHeader = "RIGHT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
                 ClientSocket.SendData(data);
             }
             else if (option == "Left")
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
+                //goleft(value, position,player1Turn);
+                //await goleft(value, position);
                 ClientSocket.dataHeader = "LEFT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
                 ClientSocket.SendData(data);
             }
+            //player1Turn = !player1Turn; // Chuyển lượt cho player 2
+            //player2Timer.Start();
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -522,18 +527,57 @@ namespace WindowsFormsApp1
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
+                //goright(value, position,player1Turn);
+                //await goright(value, position);
                 ClientSocket.dataHeader = "RIGHT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
                 ClientSocket.SendData(data);
             }
             else if (option == "Left")
             {
                 Button button = this.Controls["button" + position.ToString()] as Button;
                 button.Text = "0";
+                //goleft(value, position,player1Turn);
+                //await goleft(value, position);
                 ClientSocket.dataHeader = "LEFT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
                 ClientSocket.SendData(data);
             }
+            //player1Turn = !player1Turn; // Chuyển lượt cho player 1
+            //player1Timer.Start();
         }        
+
+        public void changeMode(bool player1Turn)
+        {
+            if(player1Turn)
+            {
+                foreach(Control button in this.Controls)
+                {
+                    if (button is Button)
+                    {
+                        for (int i = 7; i <= 11; i++)
+                        {
+                            if (button.Name == "button" + i.ToString())
+                                button.Click -= button_Click;
+                        }
+                    }
+                }
+            }
+            else if(!player1Turn)
+            {
+                foreach (Control button in this.Controls)
+                {
+                    if (button is Button)
+                    {
+                        for (int i = 1; i <= 5; i++)
+                        {
+                            if (button.Name == "button" + i.ToString())
+                                button.Click -= button_Click;
+                        }
+                    }
+                }
+            }
+            
+        }
     }
 }
