@@ -56,6 +56,25 @@ namespace OAnQuan
             ClientSocket.SendData("");
         }
 
+        public void MsgExisted()
+        {
+            MessageBox.Show("Existed lobby");
+        }
+
+        public void MsgNotExisted()
+        {
+            MessageBox.Show("Not existed lobby");
+        }
+
+        public void MsgFull()
+        {
+            MessageBox.Show("Lobby is full");
+        }
+        public void closeForm()
+        {
+            this.Close();
+        }
+
         public void Changetextbox(string text)
         {
             richTextBox1.Text += text + "\n";

@@ -16,7 +16,9 @@ namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
-        // Khai báo biến toàn cục để lưu giá trị và vị trí của nút được chọn
+        // Create global virables for value and position of the chosen button
+        // Create global virables to check turn of player 1 or player 2
+        // Create global virables to check if quan6 or quan12 is still exist
         int value;
         int position;
         bool quan6, quan12;
@@ -24,8 +26,9 @@ namespace WindowsFormsApp1
 
         System.Windows.Forms.Timer player1Timer;
         System.Windows.Forms.Timer player2Timer;
-        int player1TimeLeft = 15; // Thời gian mặc định cho mỗi lượt của người chơi 1
-        int player2TimeLeft = 15; // Thời gian mặc định cho mỗi lượt của người chơi 2
+        // Default time for each player
+        int player1TimeLeft = 15; 
+        int player2TimeLeft = 15;
 
         public MainForm(string player1,string player2)
         {
@@ -39,18 +42,17 @@ namespace WindowsFormsApp1
                 {
                     Button button = control as Button;;
                     int value = int.Parse(button.Text);
-                    // Nhóm các button từ 1 đến 5
+                    // Button 1 to 5
                     if (button.Name == "button1" || button.Name == "button2" || button.Name == "button3" || button.Name == "button4" || button.Name == "button5")
                         button.Image = imageListButton1to5.Images[value];
-                    // Nhóm các button từ 7 đến 11
+                    // Button 7 to 11
                     else if (button.Name == "button7" || button.Name == "button8" || button.Name == "button9" || button.Name == "button10" || button.Name == "button11")
                         button.Image = imageListButton7to11.Images[value];
                     // Button 6
                     else if (button.Name == "button6")
-                        button.Image = imageListQuan6.Images[value]; // Thay "image6" bằng tên hình ảnh của bạn
-                                                                     // Button 12
+                        button.Image = imageListQuan6.Images[value]; 
                     else if (button.Name == "button12")
-                        button.Image = imageListQuan12.Images[value]; // Thay "image12" bằng tên hình ảnh của bạn
+                        button.Image = imageListQuan12.Images[value]; 
                 }
             }
             lb1name.Text = player1;
@@ -58,6 +60,7 @@ namespace WindowsFormsApp1
             player1Timer.Start(); // Start the timer for player 1
         }
 
+        #region Timer
         private void InitializeTimers()
         {
             player1Timer = new System.Windows.Forms.Timer();
@@ -78,10 +81,10 @@ namespace WindowsFormsApp1
             {
                 player1Timer.Stop(); // Stop the timer for player 1
                 MessageBox.Show("Player 1 ran out of time. Game Over.");
-                //player1Turn = false; // Player 1 loses turn
-                //StartPlayer2Turn(); // Start player 2's turn
-                //player1TimeLeft = 0; // Ensure time left is set to 0
-                //textBox3.Text = "0"; // Update TextBox with player 1's remaining time
+                DisableBtn();
+                ClientSocket.dataHeader = "TIMEOUT";
+                string data = lb1name.Text;
+                ClientSocket.SendData(data);                
             }
         }
 
@@ -94,56 +97,56 @@ namespace WindowsFormsApp1
             {
                 player2Timer.Stop(); // Stop the timer for player 2
                 MessageBox.Show("Player 2 ran out of time. Game Over.");
-                //player1Turn = true; // Player 2 loses turn
-                //StartPlayer1Turn(); // Start player 1's turn
-                //player2TimeLeft = 0; // Ensure time left is set to 0
-                //textBox4.Text = "0"; // Update TextBox with player 2's remaining time
+                DisableBtn();
+                ClientSocket.dataHeader = "TIMEOUT";
+                string data = lb2name.Text;
+                ClientSocket.SendData(data);                
             }
         }
 
-        private void ResetTime()
+        public void ResetTime()
         {
-            player1TimeLeft = 15; // Đặt lại thời gian của người chơi 1
-            player2TimeLeft = 15; // Đặt lại thời gian của người chơi 2
-            textBox3.Text = player1TimeLeft.ToString(); // Cập nhật TextBox với thời gian còn lại của người chơi 1
-            textBox4.Text = player2TimeLeft.ToString(); // Cập nhật TextBox với thời gian còn lại của người chơi 2
+            // Reset time for both players
+            player1TimeLeft = 15; 
+            player2TimeLeft = 15;
+            // Update TextBox with remaining time for both players
+            textBox3.Text = player1TimeLeft.ToString(); 
+            textBox4.Text = player2TimeLeft.ToString(); 
         }
         public void StartPlayer1Turn()
         {
-            ResetTime(); // Đặt lại thời gian cho cả hai người chơi
-            player1Timer.Start(); // Bắt đầu bộ đếm thời gian cho người chơi 1
-            player2Timer.Stop(); // Dừng bộ đếm thời gian cho người chơi 2
+            ResetTime(); 
+            player1Timer.Start(); 
+            player2Timer.Stop(); 
         }
 
         public void StartPlayer2Turn()
         {
-            ResetTime(); // Đặt lại thời gian cho cả hai người chơi
-            player2Timer.Start(); // Bắt đầu bộ đếm thời gian cho người chơi 1
-            player1Timer.Stop(); // Dừng bộ đếm thời gian cho người chơi 2
+            ResetTime(); 
+            player2Timer.Start(); 
+            player1Timer.Stop(); 
         }
+        #endregion
 
-
-
-        // Sự kiện click nút cho tất cả các nút có giá trị
+        #region Button Click Events
+        // Click event for all buttons except button 6 and 12
         private void button_Click(object sender, EventArgs e)
         {
-            if (player1Turn)
-                StartPlayer1Turn();
-            else
-                StartPlayer2Turn();
-            // Nếu nút có giá trị là 0, không làm gì cả
+            // If the value of the button is 0, do nothing
             if ((sender as Button).Text == "0")
                 return;
-            // Nếu không, lưu giá trị và vị trí của nút được chọn
-            // Hiển thị panel để chọn hướng di chuyển
+            // Save the value and position of the chosen button
+            // Show the panel for player
             else
             {
                 value = int.Parse((sender as Button).Text);
                 position = int.Parse((sender as Button).Name.Substring(6));
-                if (player1Turn && position <= 5) // Kiểm tra lượt của player 1
-                    panel2.Visible = true; // Hiển thị panel cho player 1
-                else if (!player1Turn && position >= 7) // Kiểm tra lượt của player 2
-                    panel1.Visible = true; // Hiển thị panel cho player 2
+                // Check the turn of player 1 or player 2
+                // Show the panel for player 1 or player 2
+                if (player1Turn && position <= 5) 
+                    panel2.Visible = true; 
+                else if (!player1Turn && position >= 7) 
+                    panel1.Visible = true; 
                 ClientSocket.dataHeader = "CLICK";
                 string data = value.ToString() + "|" + position.ToString();
                 ClientSocket.SendData(data);
@@ -151,11 +154,64 @@ namespace WindowsFormsApp1
 
         }
 
-        public void changeturn()
+        // Click event for all buttons in panel 1
+        public void buttonOpt_Click(object sender, EventArgs e)
         {
-            player1Turn = !player1Turn;
+            // Stop the timer for both players
+            player1Timer.Stop();
+            player2Timer.Stop();
+            string option = (sender as Button).Text;
+            panel2.Visible = false;
+            if (option == "Return")
+                return;
+            if (option == "Right")
+            {
+                Button button = this.Controls["button" + position.ToString()] as Button;
+                button.Text = "0";
+                ClientSocket.dataHeader = "RIGHT";
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
+                ClientSocket.SendData(data);
+            }
+            else if (option == "Left")
+            {
+                Button button = this.Controls["button" + position.ToString()] as Button;
+                button.Text = "0";
+                ClientSocket.dataHeader = "LEFT";
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
+                ClientSocket.SendData(data);
+            }
         }
 
+        // Click event for all buttons in panel 2
+        public void buttonOpt_Click_Player2(object sender, EventArgs e)
+        {
+            player1Timer.Stop(); // Stop the timer for player 1
+            player2Timer.Stop(); // Stop the timer for player 2
+
+            string option = (sender as Button).Text;
+            panel1.Visible = false;
+            if (option == "Return")
+                return;
+            if (option == "Right")
+            {
+                Button button = this.Controls["button" + position.ToString()] as Button;
+                button.Text = "0";
+                ClientSocket.dataHeader = "RIGHT";
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
+                ClientSocket.SendData(data);
+            }
+            else if (option == "Left")
+            {
+                Button button = this.Controls["button" + position.ToString()] as Button;
+                button.Text = "0";
+                ClientSocket.dataHeader = "LEFT";
+                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
+                ClientSocket.SendData(data);
+            }
+        }
+        #endregion
+
+        #region Game Logic
         //check 2 buttons after the button chosen.
         private void getscoreright(int position)
         {
@@ -233,9 +289,15 @@ namespace WindowsFormsApp1
                 return;
         }
 
+        public void changeturn()
+        {
+            player1Turn = !player1Turn;
+        }
+
         private void updatescore(object sender)
         {
             Button btn2 = sender as Button;
+            //if the button is button6 or button12 and the quan is still exist, add 9 to the score
             if (btn2.Name == "button6" && quan6)
             {
                 if (player1Turn)
@@ -254,6 +316,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Người chơi ăn được quan.");
                 quan12 = false;
             }
+            //if the button is not button6 or button12, add the value to the score
             else
             {
                 if (player1Turn)
@@ -309,7 +372,9 @@ namespace WindowsFormsApp1
 
             if (endgame())
             {
-                MessageBox.Show("Game Over");
+                totalScore();
+                Winner();
+                DisableBtn();
                 return;
             }
 
@@ -372,7 +437,10 @@ namespace WindowsFormsApp1
 
             if (endgame())
             {
-                MessageBox.Show("Game Over");
+                totalScore();
+                Winner();
+                changeMode(playerturn);
+                DisableBtn();
                 return;
             }
 
@@ -388,6 +456,7 @@ namespace WindowsFormsApp1
                 return;
         }
 
+        //check if the above row is empty or not
         private bool checkrowabove()
         {
             for (int i = 1; i < 6; i++)
@@ -438,115 +507,106 @@ namespace WindowsFormsApp1
             return false;
         }
 
-        // Sự kiện khi giá trị Text của nút được thay đổi
-        // Sự kiện button_TextChanged
+        //calculate the total score 
+        private void totalScore()
+        {
+            for(int i =1;i<= 5; i++)
+            {
+                textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(this.Controls["button" + i.ToString()].Text)).ToString();
+                this.Controls["button" + i.ToString()].Text = "0";
+            }
+            for (int i = 7; i <= 11; i++)
+            {
+                textBox2.Text = (int.Parse(textBox2.Text) + int.Parse(this.Controls["button" + i.ToString()].Text)).ToString();
+                this.Controls["button" + i.ToString()].Text = "0";
+            }
+        }
+
+        //show the winner
+        private void Winner()
+        {
+            int score1 = int.Parse(textBox1.Text);
+            int score2 = int.Parse(textBox2.Text);
+            ClientSocket.dataHeader = "WINNER";
+            string data = "";
+
+            if (score1 > score2)
+            {
+                MessageBox.Show(lb1name.Text + " win");
+                data = lb1name.Text;
+            }
+            else if (score1<score2)
+            {
+                MessageBox.Show(lb2name + " win");
+                data = lb2name.Text;
+            }
+            else
+            {
+                MessageBox.Show("Draw");
+                ClientSocket.dataHeader = "DRAW";
+            }
+            ClientSocket.SendData(data);
+        }
+        #endregion
+
+        // TextChanged event for all buttons
+        // Change the image of the button based on the value of the button
         private void button_TextChanged(object sender, EventArgs e)
         {
             Button button = sender as Button;
             int value = int.Parse(button.Text);
 
-            // Nhóm các button từ 1 đến 5
+            // Button 1 to 5
             if (button.Name == "button1" || button.Name == "button2" || button.Name == "button3" || button.Name == "button4" || button.Name == "button5")
                 button.Image = imageListButton1to5.Images[value];
-            // Nhóm các button từ 7 đến 11
+            // Button 7 to 11
             else if (button.Name == "button7" || button.Name == "button8" || button.Name == "button9" || button.Name == "button10" || button.Name == "button11")
                 button.Image = imageListButton7to11.Images[value];
             // Button 6
             else if (button.Name == "button6")
             {
                 if (!quan6)
-                    button.Image = imageListButton6.Images[value]; // Thay "image6" bằng tên hình ảnh của bạn
+                    button.Image = imageListButton6.Images[value]; 
                 else
                     button.Image = imageListQuan6.Images[value];
             }
+            // Button 12
             else if (button.Name == "button12")
             {
                 if (!quan12)
-                    button.Image = imageListButton12.Images[value]; // Thay "image12" bằng tên hình ảnh của bạn
+                    button.Image = imageListButton12.Images[value]; 
                 else
                     button.Image = imageListQuan12.Images[value];
             }
-        }
-
-
-        // Sự kiện click nút cho các nút trong panel của player 1
-        public void buttonOpt_Click(object sender, EventArgs e)
-        {
-            player1Timer.Stop(); // Stop the timer for player 1
-            player2Timer.Stop(); // Stop the timer for player 2
-            string option = (sender as Button).Text;
-            panel2.Visible = false;
-            if (option == "Return")
-                return;
-            if (option == "Right")
-            {
-                Button button = this.Controls["button" + position.ToString()] as Button;
-                button.Text = "0";
-                //await goright(value, position);
-                //goright(value, position,player1Turn);
-                ClientSocket.dataHeader = "RIGHT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
-                ClientSocket.SendData(data);
-            }
-            else if (option == "Left")
-            {
-                Button button = this.Controls["button" + position.ToString()] as Button;
-                button.Text = "0";
-                //goleft(value, position,player1Turn);
-                //await goleft(value, position);
-                ClientSocket.dataHeader = "LEFT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb1name.Text;
-                ClientSocket.SendData(data);
-            }
-            //player1Turn = !player1Turn; // Chuyển lượt cho player 2
-            //player2Timer.Start();
-        }
+        }        
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
             StartPlayer1Turn();
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        // If a player closes the game, send a message to the other player
+        public void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             player1Timer.Stop();
             player2Timer.Stop();
+            if (endgame())
+                return;
+            ClientSocket.dataHeader = "CLOSE";
+            string data = "";
+            if (this.Text == "Host")
+            {
+                data = lb1name.Text;
+            }
+            else
+            {
+                data = lb2name.Text;
+            }
+            ClientSocket.SendData(data);
+
         }
 
-        // Sự kiện click nút cho các nút trong panel của player 2
-        public void buttonOpt_Click_Player2(object sender, EventArgs e)
-        {
-            player1Timer.Stop(); // Stop the timer for player 1
-            player2Timer.Stop(); // Stop the timer for player 2
-
-            string option = (sender as Button).Text;
-            panel1.Visible = false;
-            if (option == "Return")
-                return;
-            if (option == "Right")
-            {
-                Button button = this.Controls["button" + position.ToString()] as Button;
-                button.Text = "0";
-                //goright(value, position,player1Turn);
-                //await goright(value, position);
-                ClientSocket.dataHeader = "RIGHT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
-                ClientSocket.SendData(data);
-            }
-            else if (option == "Left")
-            {
-                Button button = this.Controls["button" + position.ToString()] as Button;
-                button.Text = "0";
-                //goleft(value, position,player1Turn);
-                //await goleft(value, position);
-                ClientSocket.dataHeader = "LEFT";
-                string data = value.ToString() + "|" + position.ToString() + "|" + player1Turn.ToString() + "|" + lb2name.Text;
-                ClientSocket.SendData(data);
-            }
-            //player1Turn = !player1Turn; // Chuyển lượt cho player 1
-            //player1Timer.Start();
-        }        
-
+        //Check side of the player and disable the button of the oppsite side
         public void changeMode(bool player1Turn)
         {
             if(player1Turn)
@@ -578,6 +638,16 @@ namespace WindowsFormsApp1
                 }
             }
             
+        }
+
+        //Remove all click events of the buttons
+        private void DisableBtn()
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c is Button)
+                    c.Click -= button_Click;
+            }
         }
     }
 }

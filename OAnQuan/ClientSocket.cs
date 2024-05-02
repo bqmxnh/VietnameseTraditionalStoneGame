@@ -63,10 +63,29 @@ namespace OAnQuan
 
             switch (PayLoad[0])
             {
+                case "EXISTED":
+                    {
+                        MenuForm.lobby.MsgExisted();
+                        MenuForm.lobby.closeForm();
+                    }
+                    break;
                 case "CREATED":
                     {
                         MenuForm.lobby.ShowbtnStart();
                         MenuForm.lobby.DisplayPlayer(PayLoad[1]);
+                    }
+                    break;
+                case "NOTEXISTED":
+                    {
+                        MenuForm.lobby.MsgNotExisted();
+                        MenuForm.lobby.closeForm();
+                    }
+                    break;
+                case "FULL":
+                    {
+                        MenuForm.lobby.Text = "FULL";
+                        MenuForm.lobby.MsgFull();
+                        MenuForm.lobby.closeForm();
                     }
                     break;
                 case "CONNECTED":
@@ -96,13 +115,11 @@ namespace OAnQuan
                         });
                     }
                     break;
-                case "CLICKED":
+                case "CLOSED":
                     {
-                        mainForm.Invoke((MethodInvoker)delegate
-                        {
-                            Button btn = mainForm.Controls["button" + PayLoad[2]] as Button;
-                            btn.Focus();
-                        });
+                        MessageBox.Show("Player " + PayLoad[1] + " has left the game");
+                        mainForm.FormClosed -= mainForm.MainForm_FormClosed;
+                        mainForm.Close();
                     }
                     break;
                 case "GORIGHT":
@@ -111,16 +128,15 @@ namespace OAnQuan
                         {
                             (mainForm.Controls["button" + PayLoad[2]] as Button).Text = "0";
                             if (PayLoad[3].ToLower() == "true")
-                            {
                                 player1Turn = true;
-                                mainForm.StartPlayer1Turn();
-                            }
                             else
-                            {
                                 player1Turn = false;
-                                mainForm.StartPlayer2Turn();
-                            }
+                            mainForm.ResetTime();
                             await mainForm.goright(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]),player1Turn);
+                            if (player1Turn)
+                                mainForm.StartPlayer2Turn();
+                            else
+                                mainForm.StartPlayer1Turn();
                             mainForm.changeturn();
                         });
                     }
@@ -131,24 +147,19 @@ namespace OAnQuan
                         {
                             (mainForm.Controls["button" + PayLoad[2]] as Button).Text = "0";
                             if (PayLoad[3].ToLower() == "true")
-                            {
                                 player1Turn = true;
-                                mainForm.StartPlayer1Turn();
-                            }
                             else
-                            {
                                 player1Turn = false;
-                                mainForm.StartPlayer2Turn();
-                            }
+                            mainForm.ResetTime();
                             await mainForm.goleft(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]),player1Turn);
+                            if (player1Turn)
+                                mainForm.StartPlayer2Turn();
+                            else
+                                mainForm.StartPlayer1Turn();
                             mainForm.changeturn();
                         });
                     }
                     break;
-                //case "TIME":
-                //    {
-
-                //    }
                 default:
                     break;
             }
