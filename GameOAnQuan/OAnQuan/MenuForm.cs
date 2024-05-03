@@ -51,7 +51,7 @@ namespace OAnQuan
             IPEndPoint serverEP = new IPEndPoint(IPAddress.Parse(ip), 9999);
             ClientSocket.dataHeader = "CREATE";
             ClientSocket.Connect(serverEP);
-
+            
             lobby = new Lobby();
             ClientSocket.SendData(name);
             Player1.name = name;
@@ -68,12 +68,12 @@ namespace OAnQuan
             ClientSocket.clientSocket.Close();
             this.Show();
         }
-
+        
         private void Menu_Shown(object sender, EventArgs e)
         {
             tbIP.Text = GetIPv4(NetworkInterfaceType.Wireless80211);
-
-            if (string.IsNullOrEmpty(tbIP.Text))
+            
+            if(string.IsNullOrEmpty(tbIP.Text))
             {
                 tbIP.Text = GetIPv4(NetworkInterfaceType.Ethernet);
             }

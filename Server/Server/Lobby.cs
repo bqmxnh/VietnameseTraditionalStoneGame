@@ -10,7 +10,7 @@ namespace Server
     internal class Lobby
     {
         public string ip { get; set; }
-
+        
         public bool isHost = false;
 
         public bool isGuest = false;

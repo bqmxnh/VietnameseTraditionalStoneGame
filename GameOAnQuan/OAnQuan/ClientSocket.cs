@@ -37,12 +37,12 @@ namespace OAnQuan
         {
             byte[] bytes = new byte[1024];
 
-            while (clientSocket.Connected)
+            while(clientSocket.Connected)
             {
-                if (clientSocket.Available > 0)
+                if(clientSocket.Available > 0)
                 {
                     string msg = "";
-                    while (clientSocket.Available > 0)
+                    while(clientSocket.Available > 0)
                     {
                         int bytesRec = clientSocket.Receive(bytes);
                         msg += Encoding.UTF8.GetString(bytes, 0, bytesRec);
@@ -51,12 +51,12 @@ namespace OAnQuan
                     AnalyzeMessage(msg);
                     MenuForm.lobby.Changetextbox(msg);
                 }
-            }
+            }    
         }
 
         public static MainForm mainForm;
         public static bool player1Turn;
-
+   
         public static void AnalyzeMessage(string msg)
         {
             string[] PayLoad = msg.Split('|');
@@ -132,7 +132,7 @@ namespace OAnQuan
                             else
                                 player1Turn = false;
                             mainForm.ResetTime();
-                            await mainForm.goright(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]), player1Turn);
+                            await mainForm.goright(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]),player1Turn);
                             if (player1Turn)
                                 mainForm.StartPlayer2Turn();
                             else
@@ -151,7 +151,7 @@ namespace OAnQuan
                             else
                                 player1Turn = false;
                             mainForm.ResetTime();
-                            await mainForm.goleft(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]), player1Turn);
+                            await mainForm.goleft(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]),player1Turn);
                             if (player1Turn)
                                 mainForm.StartPlayer2Turn();
                             else

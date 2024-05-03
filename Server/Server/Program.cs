@@ -60,7 +60,7 @@ namespace Server
                     }
 
                     Console.WriteLine(player.playerSocket.RemoteEndPoint.ToString() + " : " + msg);
-                    AnalyzeMessage(msg, player, lobby);
+                    AnalyzeMessage(msg, player,lobby);
                 }
             }
         }
@@ -70,7 +70,7 @@ namespace Server
             return lobbies.Find(x => x.ip == lobby.ip);
         }
 
-        public static void AnalyzeMessage(string msg, Player player, Lobby lobby)
+        public static void AnalyzeMessage(string msg, Player player,Lobby lobby)
         {
             string[] PayLoad = msg.Split('|');
 
@@ -80,7 +80,7 @@ namespace Server
                     {
 
                         Lobby lobby1 = findLobby(lobby);
-                        if (lobby1 != null)
+                        if(lobby1!=null)
                         {
                             string ip = lobby1.ip;
                             if (lobby1.isHost == false)
@@ -133,13 +133,13 @@ namespace Server
                                     }
                                 }
                             }
-                            else if (lobby1.isHost == false)
+                            else if(lobby1.isHost == false)
                             {
                                 Console.WriteLine("Not Existed");
                                 byte[] data = Encoding.UTF8.GetBytes("NOTEXISTED|");
                                 player.playerSocket.Send(data);
                             }
-                            else if (lobby1.isHost == true && lobby1.isGuest == true)
+                            else if(lobby1.isHost == true && lobby1.isGuest == true)
                             {
                                 Console.WriteLine("Full");
                                 byte[] data = Encoding.UTF8.GetBytes("FULL|");
@@ -151,16 +151,16 @@ namespace Server
                 case "DISCONNECT":
                     {
                         Lobby lobby1 = findLobby(lobby);
-                        if (lobby1 != null)
+                        if(lobby1 != null)
                         {
-                            if (player.name == lobby1.Host.name)
+                            if(player.name == lobby1.Host.name)
                             {
                                 lobby1.Host.playerSocket.Shutdown(SocketShutdown.Both);
                                 lobby1.Host.playerSocket.Close();
                                 lobby1.isHost = false;
                                 connectedPlayers.Remove(lobby1.Host);
                             }
-                            else if (player.name == lobby1.Guest.name)
+                            else if(player.name == lobby1.Guest.name)
                             {
                                 lobby1.Guest.playerSocket.Shutdown(SocketShutdown.Both);
                                 lobby1.Guest.playerSocket.Close();
@@ -186,7 +186,7 @@ namespace Server
                             lobby1.Guest.playerSocket.Send(data);
                             Console.WriteLine("Sendback: " + message);
                             Thread.Sleep(100);
-                        }
+                        }                   
                     }
                     break;
                 case "TIMEOUT":
@@ -197,16 +197,16 @@ namespace Server
                 case "CLOSE":
                     {
                         Lobby lobby1 = findLobby(lobby);
-                        if (lobby1 != null)
+                        if(lobby1 != null)
                         {
                             Console.WriteLine("Close: " + PayLoad[1]);
                             string message = "CLOSED|" + PayLoad[1];
                             byte[] data = Encoding.UTF8.GetBytes(message);
-                            if (lobby1.Host.name == PayLoad[1])
+                            if(lobby1.Host.name == PayLoad[1])
                             {
                                 lobby1.Host.playerSocket.Send(data);
                             }
-                            else if (lobby1.Guest.name == PayLoad[1])
+                            else if(lobby1.Guest.name == PayLoad[1])
                             {
                                 lobby1.Guest.playerSocket.Send(data);
                             }
@@ -216,7 +216,7 @@ namespace Server
                 case "RIGHT":
                     {
                         Lobby lobby1 = findLobby(lobby);
-                        if (lobby1 != null)
+                        if(lobby1 != null)
                         {
                             string position = PayLoad[2];
                             string value = PayLoad[1];

@@ -32,7 +32,7 @@ namespace OAnQuan
         public void DisplayPlayer(string name)
         {
             playerCount++;
-            switch (playerCount)
+            switch(playerCount)
             {
                 case 1:
                     label1.Text = name;

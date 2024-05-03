@@ -72,18 +72,18 @@ namespace OAnQuan
             byte[] data = new byte[BUFFER];
             bool isOK = ReceiveData(client, data);
 
-            return DeserializeData(data);
+            return DeserializeData(data); 
         }
 
         private bool SendData(Socket socket, byte[] data)
         {
-            return socket.Send(data) == 1 ? true : false;
+           return socket.Send(data) == 1 ? true : false;
         }
 
         private bool ReceiveData(Socket socket, byte[] data)
         {
             return socket.Receive(data) == 1 ? true : false;
-        }
+        }  
 
         public byte[] SerializeData(object o)
         {

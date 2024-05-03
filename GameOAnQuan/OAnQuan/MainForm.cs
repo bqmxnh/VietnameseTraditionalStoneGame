@@ -27,10 +27,10 @@ namespace WindowsFormsApp1
         System.Windows.Forms.Timer player1Timer;
         System.Windows.Forms.Timer player2Timer;
         // Default time for each player
-        int player1TimeLeft = 15;
+        int player1TimeLeft = 15; 
         int player2TimeLeft = 15;
 
-        public MainForm(string player1, string player2)
+        public MainForm(string player1,string player2)
         {
             InitializeComponent();
             InitializeTimers();
@@ -40,7 +40,7 @@ namespace WindowsFormsApp1
             {
                 if (control is Button)
                 {
-                    Button button = control as Button; ;
+                    Button button = control as Button;;
                     int value = int.Parse(button.Text);
                     // Button 1 to 5
                     if (button.Name == "button1" || button.Name == "button2" || button.Name == "button3" || button.Name == "button4" || button.Name == "button5")
@@ -50,9 +50,9 @@ namespace WindowsFormsApp1
                         button.Image = imageListButton7to11.Images[value];
                     // Button 6
                     else if (button.Name == "button6")
-                        button.Image = imageListQuan6.Images[value];
+                        button.Image = imageListQuan6.Images[value]; 
                     else if (button.Name == "button12")
-                        button.Image = imageListQuan12.Images[value];
+                        button.Image = imageListQuan12.Images[value]; 
                 }
             }
             lb1name.Text = player1;
@@ -84,7 +84,7 @@ namespace WindowsFormsApp1
                 DisableBtn();
                 ClientSocket.dataHeader = "TIMEOUT";
                 string data = lb1name.Text;
-                ClientSocket.SendData(data);
+                ClientSocket.SendData(data);                
             }
         }
 
@@ -100,31 +100,31 @@ namespace WindowsFormsApp1
                 DisableBtn();
                 ClientSocket.dataHeader = "TIMEOUT";
                 string data = lb2name.Text;
-                ClientSocket.SendData(data);
+                ClientSocket.SendData(data);                
             }
         }
 
         public void ResetTime()
         {
             // Reset time for both players
-            player1TimeLeft = 15;
+            player1TimeLeft = 15; 
             player2TimeLeft = 15;
             // Update TextBox with remaining time for both players
-            textBox3.Text = player1TimeLeft.ToString();
-            textBox4.Text = player2TimeLeft.ToString();
+            textBox3.Text = player1TimeLeft.ToString(); 
+            textBox4.Text = player2TimeLeft.ToString(); 
         }
         public void StartPlayer1Turn()
         {
-            ResetTime();
-            player1Timer.Start();
-            player2Timer.Stop();
+            ResetTime(); 
+            player1Timer.Start(); 
+            player2Timer.Stop(); 
         }
 
         public void StartPlayer2Turn()
         {
-            ResetTime();
-            player2Timer.Start();
-            player1Timer.Stop();
+            ResetTime(); 
+            player2Timer.Start(); 
+            player1Timer.Stop(); 
         }
         #endregion
 
@@ -143,10 +143,10 @@ namespace WindowsFormsApp1
                 position = int.Parse((sender as Button).Name.Substring(6));
                 // Check the turn of player 1 or player 2
                 // Show the panel for player 1 or player 2
-                if (player1Turn && position <= 5)
-                    panel2.Visible = true;
-                else if (!player1Turn && position >= 7)
-                    panel1.Visible = true;
+                if (player1Turn && position <= 5) 
+                    panel2.Visible = true; 
+                else if (!player1Turn && position >= 7) 
+                    panel1.Visible = true; 
                 ClientSocket.dataHeader = "CLICK";
                 string data = value.ToString() + "|" + position.ToString();
                 ClientSocket.SendData(data);
@@ -327,7 +327,7 @@ namespace WindowsFormsApp1
         }
 
         //recursive function to move the value to the left until meet the QUAN or meet a button with 0 value
-        public async Task goleft(int value, int position, bool playerturn)
+        public async Task goleft(int value, int position,bool playerturn)
         {
             panel1.Visible = false;
             panel2.Visible = false;
@@ -365,7 +365,7 @@ namespace WindowsFormsApp1
             {
                 value = int.Parse(nextBtn.Text);
                 nextBtn.Text = "0";
-                await goleft(value, position + 1, playerturn);
+                await goleft(value, position + 1,playerturn);
             }
             else
                 getscoreleft(position);
@@ -428,7 +428,7 @@ namespace WindowsFormsApp1
             {
                 value = int.Parse(nextBtn.Text);
                 nextBtn.Text = "0";
-                await goright(value, position - 1, playerturn);
+                await goright(value, position - 1,playerturn);
             }
             else
             {
@@ -445,7 +445,7 @@ namespace WindowsFormsApp1
             }
 
             if (checkrowabove())
-            {
+            { 
                 updaterow(1);
                 if (checkrowbelow())
                     updaterow(2);
@@ -496,7 +496,7 @@ namespace WindowsFormsApp1
                     this.Controls["button" + i.ToString()].Text = "1";
                 }
                 textBox2.Text = (int.Parse(textBox1.Text) - 5).ToString();
-            }
+            }            
         }
 
         //check if the game is over or not
@@ -510,7 +510,7 @@ namespace WindowsFormsApp1
         //calculate the total score 
         private void totalScore()
         {
-            for (int i = 1; i <= 5; i++)
+            for(int i =1;i<= 5; i++)
             {
                 textBox1.Text = (int.Parse(textBox1.Text) + int.Parse(this.Controls["button" + i.ToString()].Text)).ToString();
                 this.Controls["button" + i.ToString()].Text = "0";
@@ -535,7 +535,7 @@ namespace WindowsFormsApp1
                 MessageBox.Show(lb1name.Text + " win");
                 data = lb1name.Text;
             }
-            else if (score1 < score2)
+            else if (score1<score2)
             {
                 MessageBox.Show(lb2name + " win");
                 data = lb2name.Text;
@@ -566,7 +566,7 @@ namespace WindowsFormsApp1
             else if (button.Name == "button6")
             {
                 if (!quan6)
-                    button.Image = imageListButton6.Images[value];
+                    button.Image = imageListButton6.Images[value]; 
                 else
                     button.Image = imageListQuan6.Images[value];
             }
@@ -574,11 +574,11 @@ namespace WindowsFormsApp1
             else if (button.Name == "button12")
             {
                 if (!quan12)
-                    button.Image = imageListButton12.Images[value];
+                    button.Image = imageListButton12.Images[value]; 
                 else
                     button.Image = imageListQuan12.Images[value];
             }
-        }
+        }        
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
@@ -609,9 +609,9 @@ namespace WindowsFormsApp1
         //Check side of the player and disable the button of the oppsite side
         public void changeMode(bool player1Turn)
         {
-            if (player1Turn)
+            if(player1Turn)
             {
-                foreach (Control button in this.Controls)
+                foreach(Control button in this.Controls)
                 {
                     if (button is Button)
                     {
@@ -623,7 +623,7 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            else if (!player1Turn)
+            else if(!player1Turn)
             {
                 foreach (Control button in this.Controls)
                 {
@@ -637,7 +637,7 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-
+            
         }
 
         //Remove all click events of the buttons

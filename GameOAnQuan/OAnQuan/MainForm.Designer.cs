@@ -709,3 +709,4 @@
         private System.Windows.Forms.Label lb2name;
     }
 }
+
