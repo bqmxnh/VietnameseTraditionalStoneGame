@@ -13,7 +13,6 @@ using WindowsFormsApp1;
 using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Net;
-using System.Xml.Linq;
 
 namespace OAnQuan
 {
@@ -72,12 +71,12 @@ namespace OAnQuan
 
         private void Menu_Shown(object sender, EventArgs e)
         {
-            /*tbIP.Text = GetIPv4(NetworkInterfaceType.Wireless80211);
-            
-            if(string.IsNullOrEmpty(tbIP.Text))
+            tbIP.Text = GetIPv4(NetworkInterfaceType.Wireless80211);
+
+            if (string.IsNullOrEmpty(tbIP.Text))
             {
                 tbIP.Text = GetIPv4(NetworkInterfaceType.Ethernet);
-            }*/
+            }
         }
 
         private string GetIPv4(NetworkInterfaceType type)

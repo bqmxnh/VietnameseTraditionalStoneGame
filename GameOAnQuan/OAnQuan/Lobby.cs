@@ -23,6 +23,8 @@ namespace OAnQuan
 
             lobby = this;
 
+            btnStart.Hide();
+
             PlayerName.Add(label1);
             PlayerName.Add(label2);
         }
@@ -43,10 +45,34 @@ namespace OAnQuan
             }
         }
 
+        public void ShowbtnStart()
+        {
+            btnStart.Show();
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
         {
             ClientSocket.dataHeader = "START";
             ClientSocket.SendData("");
+        }
+
+        public void MsgExisted()
+        {
+            MessageBox.Show("Existed lobby");
+        }
+
+        public void MsgNotExisted()
+        {
+            MessageBox.Show("Not existed lobby");
+        }
+
+        public void MsgFull()
+        {
+            MessageBox.Show("Lobby is full");
+        }
+        public void closeForm()
+        {
+            this.Close();
         }
 
         public void Changetextbox(string text)

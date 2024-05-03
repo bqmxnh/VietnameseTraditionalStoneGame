@@ -16,7 +16,7 @@ namespace OAnQuan
         public static Socket clientSocket;
         public static Thread thread;
         public static string dataHeader = "";
-        // Phương thức này sử dụng để kết nối với máy chủ thông qua 1 địa chỉ IP được chỉ định, 
+
         public static void Connect(IPEndPoint ipEP)
         {
             clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -55,6 +55,7 @@ namespace OAnQuan
         }
 
         public static MainForm mainForm;
+        public static bool player1Turn;
 
         public static void AnalyzeMessage(string msg)
         {
@@ -62,11 +63,45 @@ namespace OAnQuan
 
             switch (PayLoad[0])
             {
+                case "EXISTED":
+                    {
+                        MenuForm.lobby.MsgExisted();
+                        MenuForm.lobby.closeForm();
+                    }
+                    break;
                 case "CREATED":
-                    MenuForm.lobby.DisplayPlayer(PayLoad[1]);
+                    {
+                        MenuForm.lobby.ShowbtnStart();
+                        MenuForm.lobby.DisplayPlayer(PayLoad[1]);
+                    }
+                    break;
+                case "NOTEXISTED":
+                    {
+                        MenuForm.lobby.MsgNotExisted();
+                        MenuForm.lobby.closeForm();
+                    }
+                    break;
+                case "FULL":
+                    {
+                        MenuForm.lobby.Text = "FULL";
+                        MenuForm.lobby.MsgFull();
+                        MenuForm.lobby.closeForm();
+                    }
                     break;
                 case "CONNECTED":
                     MenuForm.lobby.DisplayPlayer(PayLoad[1]);
+                    break;
+                case "HOST":
+                    {
+                        mainForm = new MainForm(PayLoad[1], PayLoad[2]);
+                        MenuForm.lobby.Invoke((MethodInvoker)delegate
+                        {
+                            //MenuForm.lobby.Hide();
+                            mainForm.Text = "Host";
+                            mainForm.changeMode(true);
+                            mainForm.Show();
+                        });
+                    }
                     break;
                 case "INIT":
                     {
@@ -74,62 +109,57 @@ namespace OAnQuan
                         MenuForm.lobby.Invoke((MethodInvoker)delegate
                         {
                             //MenuForm.lobby.Hide();
+                            mainForm.Text = "Client";
+                            mainForm.changeMode(false);
                             mainForm.Show();
                         });
                     }
                     break;
-                case "RIGHT":
+                case "CLOSED":
                     {
-                        mainForm.Invoke((MethodInvoker)delegate
+                        MessageBox.Show("Player " + PayLoad[1] + " has left the game");
+                        mainForm.FormClosed -= mainForm.MainForm_FormClosed;
+                        mainForm.Close();
+                    }
+                    break;
+                case "GORIGHT":
+                    {
+                        mainForm.Invoke((MethodInvoker)async delegate
                         {
                             (mainForm.Controls["button" + PayLoad[2]] as Button).Text = "0";
-                            if (PayLoad[3] == "true")
-                            {
-                                Player2.turn = 0;
-                                Player1.turn = 1;
-                            }
+                            if (PayLoad[3].ToLower() == "true")
+                                player1Turn = true;
                             else
-                            {
-                                Player1.turn = 0;
-                                Player2.turn = 1;
-                            }
-
-                            if (Player1.turn == 1)
-                                mainForm.StartPlayer1Turn();
-                            else
+                                player1Turn = false;
+                            mainForm.ResetTime();
+                            await mainForm.goright(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]), player1Turn);
+                            if (player1Turn)
                                 mainForm.StartPlayer2Turn();
-                            _ = mainForm.goright(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]));
+                            else
+                                mainForm.StartPlayer1Turn();
+                            mainForm.changeturn();
                         });
                     }
                     break;
-                case "LEFT":
+                case "GOLEFT":
                     {
-                        mainForm.Invoke((MethodInvoker)delegate
+                        mainForm.Invoke((MethodInvoker)async delegate
                         {
                             (mainForm.Controls["button" + PayLoad[2]] as Button).Text = "0";
-                            if (PayLoad[3] == "true")
-                            {
-                                Player2.turn = 0;
-                                Player1.turn = 1;
-                            }
+                            if (PayLoad[3].ToLower() == "true")
+                                player1Turn = true;
                             else
-                            {
-                                Player1.turn = 0;
-                                Player2.turn = 1;
-                            }
-
-                            if (Player1.turn == 1)
-                                mainForm.StartPlayer1Turn();
-                            else
+                                player1Turn = false;
+                            mainForm.ResetTime();
+                            await mainForm.goleft(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]), player1Turn);
+                            if (player1Turn)
                                 mainForm.StartPlayer2Turn();
-                            _ = mainForm.goleft(int.Parse(PayLoad[1]), int.Parse(PayLoad[2]));
+                            else
+                                mainForm.StartPlayer1Turn();
+                            mainForm.changeturn();
                         });
                     }
                     break;
-                //case "TIME":
-                //    {
-
-                //    }
                 default:
                     break;
             }
