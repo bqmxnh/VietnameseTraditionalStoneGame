@@ -57,7 +57,6 @@ namespace WindowsFormsApp1
             }
             lb1name.Text = player1;
             lb2name.Text = player2;
-            player1Timer.Start(); // Start the timer for player 1
         }
 
         #region Timer
@@ -72,59 +71,86 @@ namespace WindowsFormsApp1
             player2Timer.Tick += Player2Timer_Tick;
         }
 
+
         private void Player1Timer_Tick(object sender, EventArgs e)
         {
-            player1TimeLeft--; // Decrease player 1's remaining time
-            textBox3.Text = player1TimeLeft.ToString(); // Update TextBox with player 1's remaining time
+            player1TimeLeft--; // Giảm thời gian còn lại của người chơi 1
+            progressBar1.Value = player1TimeLeft; // Cập nhật ProgressBar với thời gian còn lại của người chơi 1
 
-            if (player1TimeLeft == 0) // Check if time has run out
+            if (player1TimeLeft == 0) // Kiểm tra nếu đã hết thời gian
             {
-                player1Timer.Stop(); // Stop the timer for player 1
-                MessageBox.Show("Player 1 ran out of time. Game Over.");
-                DisableBtn();
+                player1Timer.Stop(); // Dừng đồng hồ đếm cho người chơi 1
+                MessageBox.Show("Player 1 ran out of time. Switch turns");
                 ClientSocket.dataHeader = "TIMEOUT";
                 string data = lb1name.Text;
-                ClientSocket.SendData(data);                
+                ClientSocket.SendData(data);
+                ChangeTurn(); // Chuyển lượt chơi cho người chơi tiếp theo
             }
         }
+
 
         private void Player2Timer_Tick(object sender, EventArgs e)
         {
-            player2TimeLeft--; // Decrease player 2's remaining time
-            textBox4.Text = player2TimeLeft.ToString(); // Update TextBox with player 2's remaining time
+            player2TimeLeft--; // Giảm thời gian còn lại của người chơi 2
+            progressBar2.Value = player2TimeLeft; // Cập nhật ProgressBar với thời gian còn lại của người chơi 2
 
-            if (player2TimeLeft == 0) // Check if time has run out
+            if (player2TimeLeft == 0) // Kiểm tra nếu đã hết thời gian
             {
-                player2Timer.Stop(); // Stop the timer for player 2
-                MessageBox.Show("Player 2 ran out of time. Game Over.");
-                DisableBtn();
+                player2Timer.Stop(); // Dừng đồng hồ đếm cho người chơi 2
+                MessageBox.Show("Player 2 ran out of time. Switch turns");
                 ClientSocket.dataHeader = "TIMEOUT";
                 string data = lb2name.Text;
-                ClientSocket.SendData(data);                
+                ClientSocket.SendData(data);
+                ChangeTurn(); // Chuyển lượt chơi cho người chơi tiếp theo
             }
         }
 
+
+        private void ChangeTurn()
+        {
+            // Đảo lượt chơi
+            player1Turn = !player1Turn;
+
+            // Cập nhật Label để hiển thị lượt chơi hiện tại
+            if (player1Turn)
+                turnLabel.Text = "It's " + lb1name.Text + "'s Turn";
+            else
+                turnLabel.Text = "It's " + lb2name.Text + "'s Turn";
+
+            // Khởi động lại đồng hồ đếm cho người chơi tiếp theo
+            if (player1Turn)
+                StartPlayer1Turn();
+            else
+                StartPlayer2Turn();
+        }
+
+
+
         public void ResetTime()
         {
-            // Reset time for both players
-            player1TimeLeft = 15; 
+            // Reset thời gian cho cả hai người chơi
+            player1TimeLeft = 15;
             player2TimeLeft = 15;
-            // Update TextBox with remaining time for both players
-            textBox3.Text = player1TimeLeft.ToString(); 
-            textBox4.Text = player2TimeLeft.ToString(); 
+            // Cập nhật ProgressBar với thời gian còn lại cho cả hai người chơi
+            progressBar1.Value = player1TimeLeft;
+            progressBar2.Value = player2TimeLeft;
         }
+
+
         public void StartPlayer1Turn()
         {
-            ResetTime(); 
-            player1Timer.Start(); 
-            player2Timer.Stop(); 
+            ResetTime();
+            player2Timer.Stop(); // Dừng đồng hồ đếm của người chơi 2
+            player1Timer.Start(); // Bắt đầu đếm ngược cho người chơi 1
+            turnLabel.Text = "It's " + lb1name.Text + "'s Turn"; // Cập nhật Label để hiển thị lượt chơi
         }
 
         public void StartPlayer2Turn()
         {
-            ResetTime(); 
-            player2Timer.Start(); 
-            player1Timer.Stop(); 
+            ResetTime();
+            player2Timer.Start();
+            player1Timer.Stop();
+            turnLabel.Text = "It's " + lb2name.Text + "'s Turn"; // Cập nhật Label để hiển thị lượt chơi
         }
         #endregion
 
