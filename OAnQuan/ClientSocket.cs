@@ -13,12 +13,17 @@ namespace OAnQuan
 {
     internal class ClientSocket
     {
+        // Đối tượng Socket của Client
         public static Socket clientSocket;
+        // Luồng xử lý dữ liệu
         public static Thread thread;
+        // Header dữ liệu (Create, Connect,...)
         public static string dataHeader = "";
 
+        // Kết nối
         public static void Connect(IPEndPoint ipEP)
         {
+            // Tạo một đối tượng Socket mới 
             clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             clientSocket.Connect(ipEP);
             thread = new Thread(() => Receive());

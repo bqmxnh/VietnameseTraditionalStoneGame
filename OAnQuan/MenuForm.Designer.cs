@@ -28,78 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.btnJoin = new System.Windows.Forms.Button();
             this.tbIP = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
             this.tbName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnHowToPlay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnJoin
             // 
-            this.btnJoin.Location = new System.Drawing.Point(143, 184);
+            this.btnJoin.BackColor = System.Drawing.Color.Transparent;
+            this.btnJoin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnJoin.FlatAppearance.BorderSize = 0;
+            this.btnJoin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnJoin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnJoin.Location = new System.Drawing.Point(680, 441);
+            this.btnJoin.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnJoin.Name = "btnJoin";
-            this.btnJoin.Size = new System.Drawing.Size(103, 48);
+            this.btnJoin.Size = new System.Drawing.Size(186, 48);
             this.btnJoin.TabIndex = 0;
-            this.btnJoin.Text = "Join";
-            this.btnJoin.UseVisualStyleBackColor = true;
+            this.btnJoin.UseVisualStyleBackColor = false;
             this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
             // 
             // tbIP
             // 
-            this.tbIP.Location = new System.Drawing.Point(170, 72);
+            this.tbIP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbIP.Font = new System.Drawing.Font("Elephant", 15F, System.Drawing.FontStyle.Bold);
+            this.tbIP.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.tbIP.Location = new System.Drawing.Point(564, 351);
+            this.tbIP.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbIP.Multiline = true;
             this.tbIP.Name = "tbIP";
-            this.tbIP.Size = new System.Drawing.Size(131, 22);
+            this.tbIP.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbIP.Size = new System.Drawing.Size(189, 45);
             this.tbIP.TabIndex = 1;
             this.tbIP.Text = "127.0.0.1";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "IP Address:";
+            this.tbIP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(143, 120);
+            this.btnCreate.BackColor = System.Drawing.Color.Transparent;
+            this.btnCreate.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCreate.FlatAppearance.BorderSize = 0;
+            this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnCreate.Location = new System.Drawing.Point(454, 441);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(103, 48);
+            this.btnCreate.Size = new System.Drawing.Size(195, 48);
             this.btnCreate.TabIndex = 0;
-            this.btnCreate.Text = "Create";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(170, 34);
+            this.tbName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbName.Font = new System.Drawing.Font("Elephant", 15F, System.Drawing.FontStyle.Bold);
+            this.tbName.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.tbName.Location = new System.Drawing.Point(564, 224);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.tbName.Multiline = true;
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(131, 22);
+            this.tbName.Size = new System.Drawing.Size(199, 44);
             this.tbName.TabIndex = 1;
+            this.tbName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label2
+            // btnHowToPlay
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Name";
+            this.btnHowToPlay.BackColor = System.Drawing.Color.Transparent;
+            this.btnHowToPlay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnHowToPlay.FlatAppearance.BorderSize = 0;
+            this.btnHowToPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHowToPlay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnHowToPlay.Location = new System.Drawing.Point(26, 441);
+            this.btnHowToPlay.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btnHowToPlay.Name = "btnHowToPlay";
+            this.btnHowToPlay.Size = new System.Drawing.Size(99, 85);
+            this.btnHowToPlay.TabIndex = 2;
+            this.btnHowToPlay.UseVisualStyleBackColor = false;
+            this.btnHowToPlay.Click += new System.EventHandler(this.btnHowToPlay_Click);
             // 
             // MenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 256);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(954, 524);
+            this.Controls.Add(this.btnHowToPlay);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.tbIP);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnJoin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximumSize = new System.Drawing.Size(976, 580);
+            this.MinimumSize = new System.Drawing.Size(976, 580);
             this.Name = "MenuForm";
             this.Text = "Menu";
             this.Shown += new System.EventHandler(this.Menu_Shown);
@@ -112,9 +137,8 @@
 
         private System.Windows.Forms.Button btnJoin;
         private System.Windows.Forms.TextBox tbIP;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox tbName;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnHowToPlay;
     }
 }

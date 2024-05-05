@@ -46,10 +46,8 @@
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.button18 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.turnLabel = new System.Windows.Forms.Label();
             this.imageListButton1to5 = new System.Windows.Forms.ImageList(this.components);
             this.imageListButton7to11 = new System.Windows.Forms.ImageList(this.components);
@@ -59,11 +57,8 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.imageListQuan6 = new System.Windows.Forms.ImageList(this.components);
             this.imageListQuan12 = new System.Windows.Forms.ImageList(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.lb1name = new System.Windows.Forms.Label();
             this.lb2name = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -75,10 +70,12 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(162, 152);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button1.Location = new System.Drawing.Point(115, 174);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 120);
+            this.button1.Size = new System.Drawing.Size(67, 78);
             this.button1.TabIndex = 0;
             this.button1.Text = "5";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -89,10 +86,12 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(268, 152);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button2.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button2.Location = new System.Drawing.Point(185, 174);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 120);
+            this.button2.Size = new System.Drawing.Size(67, 78);
             this.button2.TabIndex = 1;
             this.button2.Text = "5";
             this.button2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -103,10 +102,12 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(374, 152);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button3.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button3.Location = new System.Drawing.Point(256, 174);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 120);
+            this.button3.Size = new System.Drawing.Size(67, 78);
             this.button3.TabIndex = 0;
             this.button3.Text = "5";
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -117,10 +118,12 @@
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(480, 152);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button4.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button4.Location = new System.Drawing.Point(327, 174);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 120);
+            this.button4.Size = new System.Drawing.Size(67, 78);
             this.button4.TabIndex = 1;
             this.button4.Text = "5";
             this.button4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -131,10 +134,12 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.Location = new System.Drawing.Point(586, 152);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button5.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button5.Location = new System.Drawing.Point(397, 174);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(100, 120);
+            this.button5.Size = new System.Drawing.Size(67, 78);
             this.button5.TabIndex = 1;
             this.button5.Text = "5";
             this.button5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -145,10 +150,12 @@
             // button11
             // 
             this.button11.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button11.Location = new System.Drawing.Point(162, 280);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button11.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button11.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button11.Location = new System.Drawing.Point(115, 257);
+            this.button11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(100, 120);
+            this.button11.Size = new System.Drawing.Size(67, 78);
             this.button11.TabIndex = 0;
             this.button11.Text = "5";
             this.button11.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -159,10 +166,12 @@
             // button10
             // 
             this.button10.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button10.Location = new System.Drawing.Point(268, 280);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button10.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button10.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button10.Location = new System.Drawing.Point(185, 257);
+            this.button10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 120);
+            this.button10.Size = new System.Drawing.Size(67, 78);
             this.button10.TabIndex = 1;
             this.button10.Text = "5";
             this.button10.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -173,10 +182,12 @@
             // button9
             // 
             this.button9.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button9.Location = new System.Drawing.Point(374, 280);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button9.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button9.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button9.Location = new System.Drawing.Point(256, 257);
+            this.button9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(100, 120);
+            this.button9.Size = new System.Drawing.Size(67, 78);
             this.button9.TabIndex = 0;
             this.button9.Text = "5";
             this.button9.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -187,10 +198,12 @@
             // button8
             // 
             this.button8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button8.Location = new System.Drawing.Point(480, 280);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button8.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button8.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button8.Location = new System.Drawing.Point(327, 257);
+            this.button8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(100, 120);
+            this.button8.Size = new System.Drawing.Size(67, 78);
             this.button8.TabIndex = 1;
             this.button8.Text = "5";
             this.button8.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -201,10 +214,12 @@
             // button7
             // 
             this.button7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.Location = new System.Drawing.Point(586, 280);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button7.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button7.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button7.Location = new System.Drawing.Point(397, 257);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(100, 120);
+            this.button7.Size = new System.Drawing.Size(67, 78);
             this.button7.TabIndex = 1;
             this.button7.Text = "5";
             this.button7.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -215,10 +230,12 @@
             // button6
             // 
             this.button6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.Location = new System.Drawing.Point(692, 152);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button6.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button6.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button6.Location = new System.Drawing.Point(468, 174);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(86, 248);
+            this.button6.Size = new System.Drawing.Size(57, 161);
             this.button6.TabIndex = 1;
             this.button6.Text = "1";
             this.button6.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -228,10 +245,12 @@
             // button12
             // 
             this.button12.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button12.Location = new System.Drawing.Point(70, 152);
-            this.button12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button12.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold);
+            this.button12.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.button12.Location = new System.Drawing.Point(53, 174);
+            this.button12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(86, 248);
+            this.button12.Size = new System.Drawing.Size(57, 161);
             this.button12.TabIndex = 1;
             this.button12.Text = "1";
             this.button12.TextAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -240,22 +259,26 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.button16);
             this.panel2.Controls.Add(this.button17);
             this.panel2.Controls.Add(this.button18);
-            this.panel2.Location = new System.Drawing.Point(284, 52);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Location = new System.Drawing.Point(185, 103);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(297, 91);
+            this.panel2.Size = new System.Drawing.Size(198, 59);
             this.panel2.TabIndex = 3;
             this.panel2.Visible = false;
             // 
             // button16
             // 
-            this.button16.Location = new System.Drawing.Point(17, 12);
-            this.button16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
+            this.button16.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F);
+            this.button16.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button16.Location = new System.Drawing.Point(11, 8);
+            this.button16.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(84, 74);
+            this.button16.Size = new System.Drawing.Size(56, 48);
             this.button16.TabIndex = 2;
             this.button16.Text = "Right";
             this.button16.UseVisualStyleBackColor = true;
@@ -263,10 +286,13 @@
             // 
             // button17
             // 
-            this.button17.Location = new System.Drawing.Point(197, 12);
-            this.button17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button17.BackgroundImage")));
+            this.button17.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F);
+            this.button17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button17.Location = new System.Drawing.Point(131, 8);
+            this.button17.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(84, 74);
+            this.button17.Size = new System.Drawing.Size(56, 48);
             this.button17.TabIndex = 2;
             this.button17.Text = "Left";
             this.button17.UseVisualStyleBackColor = true;
@@ -274,59 +300,54 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(107, 12);
-            this.button18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button18.Font = new System.Drawing.Font("Impact", 9.75F);
+            this.button18.ForeColor = System.Drawing.Color.Sienna;
+            this.button18.Location = new System.Drawing.Point(71, 8);
+            this.button18.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(84, 74);
+            this.button18.Size = new System.Drawing.Size(56, 48);
             this.button18.TabIndex = 2;
             this.button18.Text = "Return";
             this.button18.UseVisualStyleBackColor = true;
             this.button18.Click += new System.EventHandler(this.buttonOpt_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 408);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Score:";
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 114);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox1.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.textBox1.Location = new System.Drawing.Point(49, 103);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(112, 26);
+            this.textBox1.Size = new System.Drawing.Size(76, 28);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "0";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 408);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.textBox2.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox2.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.textBox2.Location = new System.Drawing.Point(49, 394);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(112, 26);
+            this.textBox2.Size = new System.Drawing.Size(76, 28);
             this.textBox2.TabIndex = 8;
             this.textBox2.Text = "0";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(104, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Score:";
             // 
             // turnLabel
             // 
             this.turnLabel.AutoSize = true;
-            this.turnLabel.Location = new System.Drawing.Point(605, 124);
+            this.turnLabel.BackColor = System.Drawing.Color.Transparent;
+            this.turnLabel.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold);
+            this.turnLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.turnLabel.Location = new System.Drawing.Point(227, 514);
+            this.turnLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.turnLabel.Name = "turnLabel";
-            this.turnLabel.Size = new System.Drawing.Size(99, 20);
+            this.turnLabel.Size = new System.Drawing.Size(130, 21);
             this.turnLabel.TabIndex = 9;
             this.turnLabel.Text = "Player\'s Turn";
             // 
@@ -334,154 +355,106 @@
             // 
             this.imageListButton1to5.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton1to5.ImageStream")));
             this.imageListButton1to5.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton1to5.Images.SetKeyName(0, "KhungLinh100.bmp");
-            this.imageListButton1to5.Images.SetKeyName(1, "KhungLinh101.bmp");
-            this.imageListButton1to5.Images.SetKeyName(2, "KhungLinh102.bmp");
-            this.imageListButton1to5.Images.SetKeyName(3, "KhungLinh103.bmp");
-            this.imageListButton1to5.Images.SetKeyName(4, "KhungLinh104.bmp");
-            this.imageListButton1to5.Images.SetKeyName(5, "KhungLinh105.bmp");
-            this.imageListButton1to5.Images.SetKeyName(6, "KhungLinh106.bmp");
-            this.imageListButton1to5.Images.SetKeyName(7, "KhungLinh107.bmp");
-            this.imageListButton1to5.Images.SetKeyName(8, "KhungLinh108.bmp");
-            this.imageListButton1to5.Images.SetKeyName(9, "KhungLinh109.bmp");
-            this.imageListButton1to5.Images.SetKeyName(10, "KhungLinh110.bmp");
-            this.imageListButton1to5.Images.SetKeyName(11, "KhungLinh111.bmp");
-            this.imageListButton1to5.Images.SetKeyName(12, "KhungLinh112.bmp");
-            this.imageListButton1to5.Images.SetKeyName(13, "KhungLinh113.bmp");
-            this.imageListButton1to5.Images.SetKeyName(14, "KhungLinh114.bmp");
-            this.imageListButton1to5.Images.SetKeyName(15, "KhungLinh115.bmp");
-            this.imageListButton1to5.Images.SetKeyName(16, "KhungLinh116.bmp");
-            this.imageListButton1to5.Images.SetKeyName(17, "KhungLinh117.bmp");
-            this.imageListButton1to5.Images.SetKeyName(18, "KhungLinh118.bmp");
-            this.imageListButton1to5.Images.SetKeyName(19, "KhungLinh119.bmp");
-            this.imageListButton1to5.Images.SetKeyName(20, "KhungLinh120.bmp");
-            this.imageListButton1to5.Images.SetKeyName(21, "KhungLinh121.bmp");
-            this.imageListButton1to5.Images.SetKeyName(22, "KhungLinh122.bmp");
-            this.imageListButton1to5.Images.SetKeyName(23, "KhungLinh123.bmp");
-            this.imageListButton1to5.Images.SetKeyName(24, "KhungLinh124.bmp");
-            this.imageListButton1to5.Images.SetKeyName(25, "KhungLinh125.bmp");
-            this.imageListButton1to5.Images.SetKeyName(26, "KhungLinh126.bmp");
-            this.imageListButton1to5.Images.SetKeyName(27, "KhungLinh127.bmp");
-            this.imageListButton1to5.Images.SetKeyName(28, "KhungLinh128.bmp");
-            this.imageListButton1to5.Images.SetKeyName(29, "KhungLinh129.bmp");
-            this.imageListButton1to5.Images.SetKeyName(30, "KhungLinh130.bmp");
+            this.imageListButton1to5.Images.SetKeyName(0, "0.png");
+            this.imageListButton1to5.Images.SetKeyName(1, "1.png");
+            this.imageListButton1to5.Images.SetKeyName(2, "2.png");
+            this.imageListButton1to5.Images.SetKeyName(3, "3.png");
+            this.imageListButton1to5.Images.SetKeyName(4, "4.png");
+            this.imageListButton1to5.Images.SetKeyName(5, "5.png");
+            this.imageListButton1to5.Images.SetKeyName(6, "6.png");
+            this.imageListButton1to5.Images.SetKeyName(7, "7.png");
+            this.imageListButton1to5.Images.SetKeyName(8, "8.png");
+            this.imageListButton1to5.Images.SetKeyName(9, "9.png");
+            this.imageListButton1to5.Images.SetKeyName(10, "10.png");
+            this.imageListButton1to5.Images.SetKeyName(11, "11.png");
+            this.imageListButton1to5.Images.SetKeyName(12, "12.png");
+            this.imageListButton1to5.Images.SetKeyName(13, "13.png");
             // 
             // imageListButton7to11
             // 
             this.imageListButton7to11.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton7to11.ImageStream")));
             this.imageListButton7to11.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton7to11.Images.SetKeyName(0, "KhungLinh000.bmp");
-            this.imageListButton7to11.Images.SetKeyName(1, "KhungLinh001.bmp");
-            this.imageListButton7to11.Images.SetKeyName(2, "KhungLinh002.bmp");
-            this.imageListButton7to11.Images.SetKeyName(3, "KhungLinh003.bmp");
-            this.imageListButton7to11.Images.SetKeyName(4, "KhungLinh004.bmp");
-            this.imageListButton7to11.Images.SetKeyName(5, "KhungLinh005.bmp");
-            this.imageListButton7to11.Images.SetKeyName(6, "KhungLinh006.bmp");
-            this.imageListButton7to11.Images.SetKeyName(7, "KhungLinh007.bmp");
-            this.imageListButton7to11.Images.SetKeyName(8, "KhungLinh008.bmp");
-            this.imageListButton7to11.Images.SetKeyName(9, "KhungLinh009.bmp");
-            this.imageListButton7to11.Images.SetKeyName(10, "KhungLinh010.bmp");
-            this.imageListButton7to11.Images.SetKeyName(11, "KhungLinh011.bmp");
-            this.imageListButton7to11.Images.SetKeyName(12, "KhungLinh012.bmp");
-            this.imageListButton7to11.Images.SetKeyName(13, "KhungLinh013.bmp");
-            this.imageListButton7to11.Images.SetKeyName(14, "KhungLinh014.bmp");
-            this.imageListButton7to11.Images.SetKeyName(15, "KhungLinh015.bmp");
-            this.imageListButton7to11.Images.SetKeyName(16, "KhungLinh016.bmp");
-            this.imageListButton7to11.Images.SetKeyName(17, "KhungLinh017.bmp");
-            this.imageListButton7to11.Images.SetKeyName(18, "KhungLinh018.bmp");
-            this.imageListButton7to11.Images.SetKeyName(19, "KhungLinh019.bmp");
-            this.imageListButton7to11.Images.SetKeyName(20, "KhungLinh020.bmp");
-            this.imageListButton7to11.Images.SetKeyName(21, "KhungLinh021.bmp");
-            this.imageListButton7to11.Images.SetKeyName(22, "KhungLinh022.bmp");
-            this.imageListButton7to11.Images.SetKeyName(23, "KhungLinh023.bmp");
-            this.imageListButton7to11.Images.SetKeyName(24, "KhungLinh024.bmp");
-            this.imageListButton7to11.Images.SetKeyName(25, "KhungLinh025.bmp");
-            this.imageListButton7to11.Images.SetKeyName(26, "KhungLinh026.bmp");
-            this.imageListButton7to11.Images.SetKeyName(27, "KhungLinh027.bmp");
-            this.imageListButton7to11.Images.SetKeyName(28, "KhungLinh028.bmp");
-            this.imageListButton7to11.Images.SetKeyName(29, "KhungLinh029.bmp");
-            this.imageListButton7to11.Images.SetKeyName(30, "KhungLinh030.bmp");
+            this.imageListButton7to11.Images.SetKeyName(0, "0.png");
+            this.imageListButton7to11.Images.SetKeyName(1, "1.png");
+            this.imageListButton7to11.Images.SetKeyName(2, "2.png");
+            this.imageListButton7to11.Images.SetKeyName(3, "3.png");
+            this.imageListButton7to11.Images.SetKeyName(4, "4.png");
+            this.imageListButton7to11.Images.SetKeyName(5, "5.png");
+            this.imageListButton7to11.Images.SetKeyName(6, "6.png");
+            this.imageListButton7to11.Images.SetKeyName(7, "7.png");
+            this.imageListButton7to11.Images.SetKeyName(8, "8.png");
+            this.imageListButton7to11.Images.SetKeyName(9, "9.png");
+            this.imageListButton7to11.Images.SetKeyName(10, "10.png");
+            this.imageListButton7to11.Images.SetKeyName(11, "11.png");
+            this.imageListButton7to11.Images.SetKeyName(12, "12.png");
+            this.imageListButton7to11.Images.SetKeyName(13, "13.png");
             // 
             // imageListButton6
             // 
             this.imageListButton6.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton6.ImageStream")));
             this.imageListButton6.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton6.Images.SetKeyName(0, "BanNguyetPhai000.bmp");
-            this.imageListButton6.Images.SetKeyName(1, "BanNguyetPhai001.bmp");
-            this.imageListButton6.Images.SetKeyName(2, "BanNguyetPhai002.bmp");
-            this.imageListButton6.Images.SetKeyName(3, "BanNguyetPhai003.bmp");
-            this.imageListButton6.Images.SetKeyName(4, "BanNguyetPhai004.bmp");
-            this.imageListButton6.Images.SetKeyName(5, "BanNguyetPhai005.bmp");
-            this.imageListButton6.Images.SetKeyName(6, "BanNguyetPhai006.bmp");
-            this.imageListButton6.Images.SetKeyName(7, "BanNguyetPhai007.bmp");
-            this.imageListButton6.Images.SetKeyName(8, "BanNguyetPhai008.bmp");
-            this.imageListButton6.Images.SetKeyName(9, "BanNguyetPhai009.bmp");
-            this.imageListButton6.Images.SetKeyName(10, "BanNguyetPhai010.bmp");
-            this.imageListButton6.Images.SetKeyName(11, "BanNguyetPhai011.bmp");
-            this.imageListButton6.Images.SetKeyName(12, "BanNguyetPhai012.bmp");
-            this.imageListButton6.Images.SetKeyName(13, "BanNguyetPhai013.bmp");
-            this.imageListButton6.Images.SetKeyName(14, "BanNguyetPhai014.bmp");
-            this.imageListButton6.Images.SetKeyName(15, "BanNguyetPhai015.bmp");
-            this.imageListButton6.Images.SetKeyName(16, "BanNguyetPhai016.bmp");
-            this.imageListButton6.Images.SetKeyName(17, "BanNguyetPhai017.bmp");
-            this.imageListButton6.Images.SetKeyName(18, "BanNguyetPhai018.bmp");
-            this.imageListButton6.Images.SetKeyName(19, "BanNguyetPhai019.bmp");
-            this.imageListButton6.Images.SetKeyName(20, "BanNguyetPhai020.bmp");
-            this.imageListButton6.Images.SetKeyName(21, "BanNguyetPhai021.bmp");
-            this.imageListButton6.Images.SetKeyName(22, "BanNguyetPhai022.bmp");
-            this.imageListButton6.Images.SetKeyName(23, "BanNguyetPhai023.bmp");
-            this.imageListButton6.Images.SetKeyName(24, "BanNguyetPhai024.bmp");
-            this.imageListButton6.Images.SetKeyName(25, "BanNguyetPhai025.bmp");
+            this.imageListButton6.Images.SetKeyName(0, "Phai0.png");
+            this.imageListButton6.Images.SetKeyName(1, "Phai1.png");
+            this.imageListButton6.Images.SetKeyName(2, "Phai2.png");
+            this.imageListButton6.Images.SetKeyName(3, "Phai3.png");
+            this.imageListButton6.Images.SetKeyName(4, "Phai4.png");
+            this.imageListButton6.Images.SetKeyName(5, "Phai5.png");
+            this.imageListButton6.Images.SetKeyName(6, "Phai6.png");
+            this.imageListButton6.Images.SetKeyName(7, "Phai7.png");
+            this.imageListButton6.Images.SetKeyName(8, "Phai8.png");
+            this.imageListButton6.Images.SetKeyName(9, "Phai9.png");
+            this.imageListButton6.Images.SetKeyName(10, "Phai10.png");
+            this.imageListButton6.Images.SetKeyName(11, "Phai11.png");
+            this.imageListButton6.Images.SetKeyName(12, "Phai12.png");
+            this.imageListButton6.Images.SetKeyName(13, "Phai13.png");
+            this.imageListButton6.Images.SetKeyName(14, "Phai14.png");
+            this.imageListButton6.Images.SetKeyName(15, "Phai15.png");
+            this.imageListButton6.Images.SetKeyName(16, "Phai16.png");
             // 
             // imageListButton12
             // 
             this.imageListButton12.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListButton12.ImageStream")));
             this.imageListButton12.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListButton12.Images.SetKeyName(0, "BanNguyetTrai000.bmp");
-            this.imageListButton12.Images.SetKeyName(1, "BanNguyetTrai001.bmp");
-            this.imageListButton12.Images.SetKeyName(2, "BanNguyetTrai002.bmp");
-            this.imageListButton12.Images.SetKeyName(3, "BanNguyetTrai003.bmp");
-            this.imageListButton12.Images.SetKeyName(4, "BanNguyetTrai004.bmp");
-            this.imageListButton12.Images.SetKeyName(5, "BanNguyetTrai005.bmp");
-            this.imageListButton12.Images.SetKeyName(6, "BanNguyetTrai006.bmp");
-            this.imageListButton12.Images.SetKeyName(7, "BanNguyetTrai007.bmp");
-            this.imageListButton12.Images.SetKeyName(8, "BanNguyetTrai008.bmp");
-            this.imageListButton12.Images.SetKeyName(9, "BanNguyetTrai009.bmp");
-            this.imageListButton12.Images.SetKeyName(10, "BanNguyetTrai010.bmp");
-            this.imageListButton12.Images.SetKeyName(11, "BanNguyetTrai011.bmp");
-            this.imageListButton12.Images.SetKeyName(12, "BanNguyetTrai012.bmp");
-            this.imageListButton12.Images.SetKeyName(13, "BanNguyetTrai013.bmp");
-            this.imageListButton12.Images.SetKeyName(14, "BanNguyetTrai014.bmp");
-            this.imageListButton12.Images.SetKeyName(15, "BanNguyetTrai015.bmp");
-            this.imageListButton12.Images.SetKeyName(16, "BanNguyetTrai016.bmp");
-            this.imageListButton12.Images.SetKeyName(17, "BanNguyetTrai017.bmp");
-            this.imageListButton12.Images.SetKeyName(18, "BanNguyetTrai018.bmp");
-            this.imageListButton12.Images.SetKeyName(19, "BanNguyetTrai019.bmp");
-            this.imageListButton12.Images.SetKeyName(20, "BanNguyetTrai020.bmp");
-            this.imageListButton12.Images.SetKeyName(21, "BanNguyetTrai021.bmp");
-            this.imageListButton12.Images.SetKeyName(22, "BanNguyetTrai022.bmp");
-            this.imageListButton12.Images.SetKeyName(23, "BanNguyetTrai023.bmp");
-            this.imageListButton12.Images.SetKeyName(24, "BanNguyetTrai024.bmp");
-            this.imageListButton12.Images.SetKeyName(25, "BanNguyetTrai025.bmp");
+            this.imageListButton12.Images.SetKeyName(0, "Trai0.png");
+            this.imageListButton12.Images.SetKeyName(1, "Trai1.png");
+            this.imageListButton12.Images.SetKeyName(2, "Trai2.png");
+            this.imageListButton12.Images.SetKeyName(3, "Trai3.png");
+            this.imageListButton12.Images.SetKeyName(4, "Trai4.png");
+            this.imageListButton12.Images.SetKeyName(5, "Trai5.png");
+            this.imageListButton12.Images.SetKeyName(6, "Trai6.png");
+            this.imageListButton12.Images.SetKeyName(7, "Trai7.png");
+            this.imageListButton12.Images.SetKeyName(8, "Trai8.png");
+            this.imageListButton12.Images.SetKeyName(9, "Trai9.png");
+            this.imageListButton12.Images.SetKeyName(10, "Trai10.png");
+            this.imageListButton12.Images.SetKeyName(11, "Trai11.png");
+            this.imageListButton12.Images.SetKeyName(12, "Trai12.png");
+            this.imageListButton12.Images.SetKeyName(13, "Trai13.png");
+            this.imageListButton12.Images.SetKeyName(14, "Trai14.png");
+            this.imageListButton12.Images.SetKeyName(15, "Trai15.png");
+            this.imageListButton12.Images.SetKeyName(16, "Trai16.png");
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.button15);
             this.panel1.Controls.Add(this.button13);
             this.panel1.Controls.Add(this.button14);
-            this.panel1.Location = new System.Drawing.Point(284, 408);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Location = new System.Drawing.Point(185, 364);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 89);
+            this.panel1.Size = new System.Drawing.Size(198, 58);
             this.panel1.TabIndex = 3;
             this.panel1.Visible = false;
             // 
             // button15
             // 
-            this.button15.Location = new System.Drawing.Point(197, 4);
-            this.button15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
+            this.button15.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F);
+            this.button15.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button15.Location = new System.Drawing.Point(131, 3);
+            this.button15.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(84, 74);
+            this.button15.Size = new System.Drawing.Size(56, 48);
             this.button15.TabIndex = 2;
             this.button15.Text = "Right";
             this.button15.UseVisualStyleBackColor = true;
@@ -489,10 +462,13 @@
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(15, 4);
-            this.button13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
+            this.button13.Font = new System.Drawing.Font("Gill Sans Ultra Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button13.Location = new System.Drawing.Point(10, 3);
+            this.button13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(84, 74);
+            this.button13.Size = new System.Drawing.Size(56, 48);
             this.button13.TabIndex = 2;
             this.button13.Text = "Left";
             this.button13.UseVisualStyleBackColor = true;
@@ -500,169 +476,120 @@
             // 
             // button14
             // 
-            this.button14.Location = new System.Drawing.Point(106, 4);
-            this.button14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button14.Font = new System.Drawing.Font("Impact", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.ForeColor = System.Drawing.Color.Sienna;
+            this.button14.Location = new System.Drawing.Point(71, 3);
+            this.button14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(84, 74);
+            this.button14.Size = new System.Drawing.Size(56, 48);
             this.button14.TabIndex = 2;
             this.button14.Text = "Return";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.buttonOpt_Click_Player2);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(37, 38);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(785, 469);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ô ăn quan - Made by Nhóm 16";
-            // 
             // imageListQuan6
             // 
             this.imageListQuan6.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListQuan6.ImageStream")));
             this.imageListQuan6.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListQuan6.Images.SetKeyName(0, "BanNguyetPhai.bmp");
-            this.imageListQuan6.Images.SetKeyName(1, "BanNguyetPhai100.bmp");
-            this.imageListQuan6.Images.SetKeyName(2, "BanNguyetPhai101.bmp");
-            this.imageListQuan6.Images.SetKeyName(3, "BanNguyetPhai102.bmp");
-            this.imageListQuan6.Images.SetKeyName(4, "BanNguyetPhai103.bmp");
-            this.imageListQuan6.Images.SetKeyName(5, "BanNguyetPhai104.bmp");
-            this.imageListQuan6.Images.SetKeyName(6, "BanNguyetPhai105.bmp");
-            this.imageListQuan6.Images.SetKeyName(7, "BanNguyetPhai106.bmp");
-            this.imageListQuan6.Images.SetKeyName(8, "BanNguyetPhai107.bmp");
-            this.imageListQuan6.Images.SetKeyName(9, "BanNguyetPhai108.bmp");
-            this.imageListQuan6.Images.SetKeyName(10, "BanNguyetPhai109.bmp");
-            this.imageListQuan6.Images.SetKeyName(11, "BanNguyetPhai110.bmp");
-            this.imageListQuan6.Images.SetKeyName(12, "BanNguyetPhai111.bmp");
-            this.imageListQuan6.Images.SetKeyName(13, "BanNguyetPhai112.bmp");
-            this.imageListQuan6.Images.SetKeyName(14, "BanNguyetPhai113.bmp");
-            this.imageListQuan6.Images.SetKeyName(15, "BanNguyetPhai114.bmp");
-            this.imageListQuan6.Images.SetKeyName(16, "BanNguyetPhai115.bmp");
-            this.imageListQuan6.Images.SetKeyName(17, "BanNguyetPhai116.bmp");
-            this.imageListQuan6.Images.SetKeyName(18, "BanNguyetPhai117.bmp");
-            this.imageListQuan6.Images.SetKeyName(19, "BanNguyetPhai118.bmp");
-            this.imageListQuan6.Images.SetKeyName(20, "BanNguyetPhai119.bmp");
-            this.imageListQuan6.Images.SetKeyName(21, "BanNguyetPhai120.bmp");
-            this.imageListQuan6.Images.SetKeyName(22, "BanNguyetPhai121.bmp");
-            this.imageListQuan6.Images.SetKeyName(23, "BanNguyetPhai122.bmp");
-            this.imageListQuan6.Images.SetKeyName(24, "BanNguyetPhai123.bmp");
-            this.imageListQuan6.Images.SetKeyName(25, "BanNguyetPhai124.bmp");
-            this.imageListQuan6.Images.SetKeyName(26, "BanNguyetPhai125.bmp");
-            this.imageListQuan6.Images.SetKeyName(27, "BanNguyetPhai126.bmp");
-            this.imageListQuan6.Images.SetKeyName(28, "BanNguyetPhai127.bmp");
-            this.imageListQuan6.Images.SetKeyName(29, "BanNguyetPhai128.bmp");
-            this.imageListQuan6.Images.SetKeyName(30, "BanNguyetPhai129.bmp");
-            this.imageListQuan6.Images.SetKeyName(31, "BanNguyetPhai130.bmp");
+            this.imageListQuan6.Images.SetKeyName(0, "Phai0.png");
+            this.imageListQuan6.Images.SetKeyName(1, "Phai1.png");
+            this.imageListQuan6.Images.SetKeyName(2, "Phai2.png");
+            this.imageListQuan6.Images.SetKeyName(3, "Phai3.png");
+            this.imageListQuan6.Images.SetKeyName(4, "Phai4.png");
+            this.imageListQuan6.Images.SetKeyName(5, "Phai5.png");
+            this.imageListQuan6.Images.SetKeyName(6, "Phai6.png");
+            this.imageListQuan6.Images.SetKeyName(7, "Phai7.png");
+            this.imageListQuan6.Images.SetKeyName(8, "Phai8.png");
+            this.imageListQuan6.Images.SetKeyName(9, "Phai9.png");
+            this.imageListQuan6.Images.SetKeyName(10, "Phai10.png");
+            this.imageListQuan6.Images.SetKeyName(11, "Phai11.png");
+            this.imageListQuan6.Images.SetKeyName(12, "Phai12.png");
+            this.imageListQuan6.Images.SetKeyName(13, "Phai13.png");
+            this.imageListQuan6.Images.SetKeyName(14, "Phai14.png");
+            this.imageListQuan6.Images.SetKeyName(15, "Phai15.png");
+            this.imageListQuan6.Images.SetKeyName(16, "Phai16.png");
             // 
             // imageListQuan12
             // 
             this.imageListQuan12.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListQuan12.ImageStream")));
             this.imageListQuan12.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListQuan12.Images.SetKeyName(0, "BanNguyetTrai.bmp");
-            this.imageListQuan12.Images.SetKeyName(1, "BanNguyetTrai100.bmp");
-            this.imageListQuan12.Images.SetKeyName(2, "BanNguyetTrai101.bmp");
-            this.imageListQuan12.Images.SetKeyName(3, "BanNguyetTrai102.bmp");
-            this.imageListQuan12.Images.SetKeyName(4, "BanNguyetTrai103.bmp");
-            this.imageListQuan12.Images.SetKeyName(5, "BanNguyetTrai104.bmp");
-            this.imageListQuan12.Images.SetKeyName(6, "BanNguyetTrai105.bmp");
-            this.imageListQuan12.Images.SetKeyName(7, "BanNguyetTrai106.bmp");
-            this.imageListQuan12.Images.SetKeyName(8, "BanNguyetTrai107.bmp");
-            this.imageListQuan12.Images.SetKeyName(9, "BanNguyetTrai108.bmp");
-            this.imageListQuan12.Images.SetKeyName(10, "BanNguyetTrai109.bmp");
-            this.imageListQuan12.Images.SetKeyName(11, "BanNguyetTrai110.bmp");
-            this.imageListQuan12.Images.SetKeyName(12, "BanNguyetTrai111.bmp");
-            this.imageListQuan12.Images.SetKeyName(13, "BanNguyetTrai112.bmp");
-            this.imageListQuan12.Images.SetKeyName(14, "BanNguyetTrai113.bmp");
-            this.imageListQuan12.Images.SetKeyName(15, "BanNguyetTrai114.bmp");
-            this.imageListQuan12.Images.SetKeyName(16, "BanNguyetTrai115.bmp");
-            this.imageListQuan12.Images.SetKeyName(17, "BanNguyetTrai116.bmp");
-            this.imageListQuan12.Images.SetKeyName(18, "BanNguyetTrai117.bmp");
-            this.imageListQuan12.Images.SetKeyName(19, "BanNguyetTrai118.bmp");
-            this.imageListQuan12.Images.SetKeyName(20, "BanNguyetTrai119.bmp");
-            this.imageListQuan12.Images.SetKeyName(21, "BanNguyetTrai120.bmp");
-            this.imageListQuan12.Images.SetKeyName(22, "BanNguyetTrai121.bmp");
-            this.imageListQuan12.Images.SetKeyName(23, "BanNguyetTrai122.bmp");
-            this.imageListQuan12.Images.SetKeyName(24, "BanNguyetTrai123.bmp");
-            this.imageListQuan12.Images.SetKeyName(25, "BanNguyetTrai124.bmp");
-            this.imageListQuan12.Images.SetKeyName(26, "BanNguyetTrai125.bmp");
-            this.imageListQuan12.Images.SetKeyName(27, "BanNguyetTrai126.bmp");
-            this.imageListQuan12.Images.SetKeyName(28, "BanNguyetTrai127.bmp");
-            this.imageListQuan12.Images.SetKeyName(29, "BanNguyetTrai128.bmp");
-            this.imageListQuan12.Images.SetKeyName(30, "BanNguyetTrai129.bmp");
-            this.imageListQuan12.Images.SetKeyName(31, "BanNguyetTrai130.bmp");
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(308, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 20);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Time:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(308, 509);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 20);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Time:";
+            this.imageListQuan12.Images.SetKeyName(0, "Trai0.png");
+            this.imageListQuan12.Images.SetKeyName(1, "Trai1.png");
+            this.imageListQuan12.Images.SetKeyName(2, "Trai2.png");
+            this.imageListQuan12.Images.SetKeyName(3, "Trai3.png");
+            this.imageListQuan12.Images.SetKeyName(4, "Trai4.png");
+            this.imageListQuan12.Images.SetKeyName(5, "Trai5.png");
+            this.imageListQuan12.Images.SetKeyName(6, "Trai6.png");
+            this.imageListQuan12.Images.SetKeyName(7, "Trai7.png");
+            this.imageListQuan12.Images.SetKeyName(8, "Trai8.png");
+            this.imageListQuan12.Images.SetKeyName(9, "Trai9.png");
+            this.imageListQuan12.Images.SetKeyName(10, "Trai10.png");
+            this.imageListQuan12.Images.SetKeyName(11, "Trai11.png");
+            this.imageListQuan12.Images.SetKeyName(12, "Trai12.png");
+            this.imageListQuan12.Images.SetKeyName(13, "Trai13.png");
+            this.imageListQuan12.Images.SetKeyName(14, "Trai14.png");
+            this.imageListQuan12.Images.SetKeyName(15, "Trai15.png");
+            this.imageListQuan12.Images.SetKeyName(16, "Trai16.png");
             // 
             // lb1name
             // 
             this.lb1name.AutoSize = true;
-            this.lb1name.Location = new System.Drawing.Point(530, 9);
+            this.lb1name.BackColor = System.Drawing.Color.Transparent;
+            this.lb1name.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb1name.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lb1name.Location = new System.Drawing.Point(368, 50);
+            this.lb1name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb1name.Name = "lb1name";
-            this.lb1name.Size = new System.Drawing.Size(18, 20);
+            this.lb1name.Size = new System.Drawing.Size(19, 21);
             this.lb1name.TabIndex = 13;
             this.lb1name.Text = "1";
             // 
             // lb2name
             // 
             this.lb2name.AutoSize = true;
-            this.lb2name.Location = new System.Drawing.Point(531, 512);
+            this.lb2name.BackColor = System.Drawing.Color.Transparent;
+            this.lb2name.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Bold);
+            this.lb2name.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lb2name.Location = new System.Drawing.Point(364, 457);
+            this.lb2name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb2name.Name = "lb2name";
-            this.lb2name.Size = new System.Drawing.Size(18, 20);
+            this.lb2name.Size = new System.Drawing.Size(19, 21);
             this.lb2name.TabIndex = 14;
             this.lb2name.Text = "1";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(361, 9);
+            this.progressBar1.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.progressBar1.Location = new System.Drawing.Point(239, 42);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar1.Maximum = 15;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(163, 20);
+            this.progressBar1.Size = new System.Drawing.Size(109, 34);
             this.progressBar1.TabIndex = 15;
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(375, 512);
+            this.progressBar2.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.progressBar2.Location = new System.Drawing.Point(239, 450);
+            this.progressBar2.Margin = new System.Windows.Forms.Padding(2);
             this.progressBar2.Maximum = 15;
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(150, 20);
+            this.progressBar2.Size = new System.Drawing.Size(109, 34);
             this.progressBar2.TabIndex = 16;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 544);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(584, 561);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lb2name);
             this.Controls.Add(this.lb1name);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.turnLabel);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
@@ -676,9 +603,11 @@
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaximumSize = new System.Drawing.Size(600, 600);
+            this.MinimumSize = new System.Drawing.Size(600, 600);
             this.Name = "MainForm";
             this.Text = "Ô ăn quan - Made by Nhóm 16";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
@@ -708,10 +637,8 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label turnLabel;
         private System.Windows.Forms.ImageList imageListButton1to5;
         private System.Windows.Forms.ImageList imageListButton7to11;
@@ -721,11 +648,8 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ImageList imageListQuan6;
         private System.Windows.Forms.ImageList imageListQuan12;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lb1name;
         private System.Windows.Forms.Label lb2name;
         private System.Windows.Forms.ProgressBar progressBar2;
