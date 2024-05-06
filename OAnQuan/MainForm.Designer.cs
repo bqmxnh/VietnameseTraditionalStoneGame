@@ -63,6 +63,8 @@
             this.lb2name = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnSound = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -577,11 +579,22 @@
             this.progressBar2.Size = new System.Drawing.Size(109, 34);
             this.progressBar2.TabIndex = 16;
             // 
+            // btnSound
+            // 
+            this.btnSound.Location = new System.Drawing.Point(424, 42);
+            this.btnSound.Name = "btnSound";
+            this.btnSound.Size = new System.Drawing.Size(75, 23);
+            this.btnSound.TabIndex = 17;
+            this.btnSound.Text = "Sound";
+            this.btnSound.UseVisualStyleBackColor = true;
+            this.btnSound.Click += new System.EventHandler(this.btnSound_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(584, 561);
+            this.Controls.Add(this.btnSound);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lb2name);
@@ -654,6 +667,8 @@
         private System.Windows.Forms.Label lb2name;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnSound;
     }
 }
 
