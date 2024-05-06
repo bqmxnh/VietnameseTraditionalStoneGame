@@ -11,6 +11,9 @@ namespace Server
 {
     class Program
     {
+        //Tạo file log để ghi lại lịch sử kết nối
+        private static FileStream fs = new FileStream("log.txt", FileMode.OpenOrCreate, FileAccess.Write);
+        private static StreamWriter sw = new StreamWriter(fs);
         // Socket lắng nghe kết nối từ Client
         private static Socket serverSocket;
         // Đại diện cho mỗi Client kết nối
@@ -81,7 +84,7 @@ namespace Server
                     // In ra màn hình thông điệu cho biết dữ liệu nhận được từ Client nào (IP:Port) cùng msg
                     Console.WriteLine(player.playerSocket.RemoteEndPoint.ToString() + " : " + msg);
                     // Hàm này dùng phân tích và xử lý tin nhắn nhận đc
-                    AnalyzeMessage(msg, player,lobby);
+                    AnalyzeMessage(msg, player, lobby);
                 }
             }
         }
@@ -96,7 +99,7 @@ namespace Server
         // Phan tích tin nhắn từ Client: chia thành các phần sử dụng ký tự |, phần sử đầu tiên là Loại tin nhắn
         // (CREATE, CONNECT, DISCONNECT, START, TIMEOUT, CLOSE, RIGHT, LEFT,...)
         //
-        public static void AnalyzeMessage(string msg, Player player,Lobby lobby)
+        public static void AnalyzeMessage(string msg, Player player, Lobby lobby)
         {
             string[] PayLoad = msg.Split('|');
 
@@ -107,7 +110,7 @@ namespace Server
                         // Tìm phòng tương ứng với địa chỉ IP của Client
                         Lobby lobby1 = findLobby(lobby);
                         // Nếu phòng đã tồn tại
-                        if(lobby1!=null)
+                        if (lobby1 != null)
                         {
                             string ip = lobby1.ip;
                             // Nếu phòng chưa có host, client hiện tại sẽ trở thành host của phòng
@@ -118,6 +121,8 @@ namespace Server
                                 lobby1.Host = player;
                                 // Server sẽ gửi tin nhắn CREATED cho client kèm tên người chơi
                                 byte[] data = Encoding.UTF8.GetBytes("CREATED|" + player.name);
+                                Console.WriteLine("Created: " + player.name);
+                                WriteLog("Created: " + player.name);
                                 player.playerSocket.Send(data);
                                 // Xử lý trùng khớp:
                                 // Nếu IP của lobby trùng với IP của lobby1, lobby đó sẽ được loại khỏ danh sách lobby và thêm lại vào lobby1
@@ -134,6 +139,7 @@ namespace Server
                             {
                                 // Còn nếu phòng đã có Host, server báo EXISTED cho client báo phòng tồn tại và có người chơi làm host
                                 Console.WriteLine("Existed");
+                                WriteLog("Existed");
                                 byte[] data = Encoding.UTF8.GetBytes("EXISTED|");
                                 player.playerSocket.Send(data);
                             }
@@ -159,6 +165,8 @@ namespace Server
                                 Thread.Sleep(100);
                                 // Client sẽ gửi cho Server về tên cả Client
                                 data = Encoding.UTF8.GetBytes("CONNECTED|" + player.name);
+                                Console.WriteLine("Connected: " + player.name);
+                                WriteLog("Connected: " + player.name);
                                 player.playerSocket.Send(data);
                                 lobby1.Host.playerSocket.Send(data);
                                 // Nếu tồn tại 1 IP của lobby trùng với IP của lobby, xóa trong lobby, thêm vào lobby1
@@ -172,16 +180,18 @@ namespace Server
                                 }
                             }
                             // Ngược lại nếu phòng chơi chưa có host, tức là phòng chưa được tạo, Server sẽ gửi thông báo cho Client NOTEXISTED
-                            else if(lobby1.isHost == false)
+                            else if (lobby1.isHost == false)
                             {
                                 Console.WriteLine("Not Existed");
+                                WriteLog("Not Existed");
                                 byte[] data = Encoding.UTF8.GetBytes("NOTEXISTED|");
                                 player.playerSocket.Send(data);
                             }
-                            else if(lobby1.isHost == true && lobby1.isGuest == true)
+                            else if (lobby1.isHost == true && lobby1.isGuest == true)
                             {
                                 // Nếu đã tồn tại cả Host và Guest, gửi thông báo phòng đã đầy
                                 Console.WriteLine("Full");
+                                WriteLog("Full");
                                 byte[] data = Encoding.UTF8.GetBytes("FULL|");
                                 player.playerSocket.Send(data);
                             }
@@ -194,10 +204,10 @@ namespace Server
                     {
                         // Tìm phòng chơi tương ứng với địa chỉ IP của Client 
                         Lobby lobby1 = findLobby(lobby);
-                        if(lobby1 != null)
+                        if (lobby1 != null)
                         {
                             // Nếu là Host
-                            if(player.name == lobby1.Host.name)
+                            if (player.name == lobby1.Host.name)
                             {
                                 //Ngắt kết nối mạng của Host
                                 lobby1.Host.playerSocket.Shutdown(SocketShutdown.Both);
@@ -207,14 +217,18 @@ namespace Server
                                 lobby1.isHost = false;
                                 // Loại host khỏi danh sách người chơi đã kết nối trong connectedPlayers
                                 connectedPlayers.Remove(lobby1.Host);
+                                Console.WriteLine("Disconnect: " + lobby1.Host.name);
+                                WriteLog("Disconnect: " + lobby1.Host.name);
                             }
                             // Guest làm tương tự Host
-                            else if(player.name == lobby1.Guest.name)
+                            else if (player.name == lobby1.Guest.name)
                             {
                                 lobby1.Guest.playerSocket.Shutdown(SocketShutdown.Both);
                                 lobby1.Guest.playerSocket.Close();
                                 lobby1.isGuest = false;
                                 connectedPlayers.Remove(lobby1.Guest);
+                                Console.WriteLine("Disconnect: " + lobby1.Guest.name);
+                                WriteLog("Disconnect: " + lobby1.Guest.name);
                             }
                         }
                     }
@@ -230,6 +244,7 @@ namespace Server
                             byte[] data = Encoding.UTF8.GetBytes(message);
                             lobby1.Host.playerSocket.Send(data);
                             Console.WriteLine("Sendback: " + message);
+                            WriteLog("Sendback: " + message);
                             Thread.Sleep(100);
                             // Guest: tương tự host
                             message = "INIT|" + lobby1.Host.name + "|" + lobby1.Guest.name;
@@ -238,30 +253,32 @@ namespace Server
                             Console.WriteLine("Sendback: " + message);
                             // Đảm bảo rằng thông điệp được gửi đến đúng địa chỉ và được xử lý bởi client.
                             Thread.Sleep(100);
-                        }                   
+                        }
                     }
                     break;
                 //  Server chỉ in ra một thông báo cho biết có timeout và hiển thị tên của người chơi liên quan.
                 case "TIMEOUT":
                     {
                         Console.WriteLine("Timeout: " + PayLoad[1]);
+                        WriteLog("Timeout: " + PayLoad[1]);
                     }
                     break;
                 case "CLOSE":
                     {
                         // Tìm lobby ứng với client muốn đóng kết nối
                         Lobby lobby1 = findLobby(lobby);
-                        if(lobby1 != null)
+                        if (lobby1 != null)
                         {
                             Console.WriteLine("Close: " + PayLoad[1]);
+                            WriteLog("Close: " + PayLoad[1]);
                             // Server gửi một tin nhắn thông báo đóng kết nối tới người chơi muốn đóng kết nối.
                             string message = "CLOSED|" + PayLoad[1];
                             byte[] data = Encoding.UTF8.GetBytes(message);
-                            if(lobby1.Host.name == PayLoad[1])
+                            if (lobby1.Host.name == PayLoad[1])
                             {
                                 lobby1.Host.playerSocket.Send(data);
                             }
-                            else if(lobby1.Guest.name == PayLoad[1])
+                            else if (lobby1.Guest.name == PayLoad[1])
                             {
                                 lobby1.Guest.playerSocket.Send(data);
                             }
@@ -273,7 +290,7 @@ namespace Server
                 case "RIGHT":
                     {
                         Lobby lobby1 = findLobby(lobby);
-                        if(lobby1 != null)
+                        if (lobby1 != null)
                         {
                             string position = PayLoad[2];
                             string value = PayLoad[1];
@@ -282,6 +299,7 @@ namespace Server
                             byte[] data = Encoding.UTF8.GetBytes(message);
                             lobby1.Guest.playerSocket.Send(data);
                             lobby1.Host.playerSocket.Send(data);
+                            WriteLog("Right: " + message);
                         }
                     }
                     break;
@@ -297,6 +315,7 @@ namespace Server
                             byte[] data = Encoding.UTF8.GetBytes(message);
                             lobby1.Guest.playerSocket.Send(data);
                             lobby1.Host.playerSocket.Send(data);
+                            WriteLog("Left: " + message);
                         }
                     }
                     break;
@@ -304,17 +323,25 @@ namespace Server
                 case "WINNER":
                     {
                         Console.WriteLine("Winner: " + PayLoad[1]);
+                        WriteLog("Winner: " + PayLoad[1]);
                     }
                     break;
                 // khi trò chơi kết thúc với kết quả hòa. Server chỉ in ra một thông báo nói rằng trò chơi kết thúc với kết quả hòa.
                 case "DRAW":
                     {
                         Console.WriteLine("Draw");
+                        WriteLog("Draw");
                     }
                     break;
                 default:
                     break;
             }
+        }
+
+        private static void WriteLog(string msg)
+        {
+            sw.WriteLine(DateTime.Now + ": " + msg);
+            sw.Flush();
         }
     }
 }
