@@ -370,6 +370,13 @@
             this.imageListButton1to5.Images.SetKeyName(11, "11.png");
             this.imageListButton1to5.Images.SetKeyName(12, "12.png");
             this.imageListButton1to5.Images.SetKeyName(13, "13.png");
+            this.imageListButton1to5.Images.SetKeyName(14, "14.png");
+            this.imageListButton1to5.Images.SetKeyName(15, "15.png");
+            this.imageListButton1to5.Images.SetKeyName(16, "16.png");
+            this.imageListButton1to5.Images.SetKeyName(17, "17.png");
+            this.imageListButton1to5.Images.SetKeyName(18, "18.png");
+            this.imageListButton1to5.Images.SetKeyName(19, "19.png");
+            this.imageListButton1to5.Images.SetKeyName(20, "20.png");
             // 
             // imageListButton7to11
             // 
@@ -389,6 +396,13 @@
             this.imageListButton7to11.Images.SetKeyName(11, "11.png");
             this.imageListButton7to11.Images.SetKeyName(12, "12.png");
             this.imageListButton7to11.Images.SetKeyName(13, "13.png");
+            this.imageListButton7to11.Images.SetKeyName(14, "14.png");
+            this.imageListButton7to11.Images.SetKeyName(15, "15.png");
+            this.imageListButton7to11.Images.SetKeyName(16, "16.png");
+            this.imageListButton7to11.Images.SetKeyName(17, "17.png");
+            this.imageListButton7to11.Images.SetKeyName(18, "18.png");
+            this.imageListButton7to11.Images.SetKeyName(19, "19.png");
+            this.imageListButton7to11.Images.SetKeyName(20, "20.png");
             // 
             // imageListButton6
             // 
