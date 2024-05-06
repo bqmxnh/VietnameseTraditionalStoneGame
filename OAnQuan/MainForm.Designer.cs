@@ -64,7 +64,6 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnSound = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -322,7 +321,7 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(76, 28);
+            this.textBox1.Size = new System.Drawing.Size(76, 38);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "0";
             // 
@@ -349,7 +348,7 @@
             this.turnLabel.Location = new System.Drawing.Point(227, 514);
             this.turnLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.turnLabel.Name = "turnLabel";
-            this.turnLabel.Size = new System.Drawing.Size(130, 21);
+            this.turnLabel.Size = new System.Drawing.Size(192, 31);
             this.turnLabel.TabIndex = 9;
             this.turnLabel.Text = "Player\'s Turn";
             // 
@@ -542,7 +541,7 @@
             this.lb1name.Location = new System.Drawing.Point(368, 50);
             this.lb1name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb1name.Name = "lb1name";
-            this.lb1name.Size = new System.Drawing.Size(19, 21);
+            this.lb1name.Size = new System.Drawing.Size(28, 31);
             this.lb1name.TabIndex = 13;
             this.lb1name.Text = "1";
             // 
@@ -555,7 +554,7 @@
             this.lb2name.Location = new System.Drawing.Point(364, 457);
             this.lb2name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lb2name.Name = "lb2name";
-            this.lb2name.Size = new System.Drawing.Size(19, 21);
+            this.lb2name.Size = new System.Drawing.Size(28, 31);
             this.lb2name.TabIndex = 14;
             this.lb2name.Text = "1";
             // 
@@ -579,22 +578,11 @@
             this.progressBar2.Size = new System.Drawing.Size(109, 34);
             this.progressBar2.TabIndex = 16;
             // 
-            // btnSound
-            // 
-            this.btnSound.Location = new System.Drawing.Point(424, 42);
-            this.btnSound.Name = "btnSound";
-            this.btnSound.Size = new System.Drawing.Size(75, 23);
-            this.btnSound.TabIndex = 17;
-            this.btnSound.Text = "Sound";
-            this.btnSound.UseVisualStyleBackColor = true;
-            this.btnSound.Click += new System.EventHandler(this.btnSound_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(584, 561);
-            this.Controls.Add(this.btnSound);
+            this.ClientSize = new System.Drawing.Size(578, 544);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lb2name);
@@ -668,7 +656,6 @@
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button btnSound;
     }
 }
 

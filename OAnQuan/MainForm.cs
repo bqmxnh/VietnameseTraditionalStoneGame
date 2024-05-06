@@ -12,7 +12,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Media;
 
 namespace WindowsFormsApp1
 {
@@ -31,7 +30,6 @@ namespace WindowsFormsApp1
         System.Windows.Forms.Timer player2Timer;
         int currentPlayerTimeLeft = 15;
 
-        SoundPlayer soundPlayer;
 
         public MainForm(string player1,string player2)
         {
@@ -677,20 +675,7 @@ namespace WindowsFormsApp1
             
         }
 
-        private void btnSound_Click(object sender, EventArgs e)
-        {
-            if (soundPlayer != null)
-            {
-                soundPlayer.Dispose();
-                soundPlayer = null;
-            }
-            else
-            {
-                // Tạo một SoundPlayer mới và chơi tệp âm thanh
-                soundPlayer = new SoundPlayer("D:/sound.wav");
-                soundPlayer.Play();
-            }
-        }
+       
 
 
         //Remove all click events of the buttons
