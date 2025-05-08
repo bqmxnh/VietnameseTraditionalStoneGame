@@ -23,7 +23,7 @@ git clone https://github.com/bqmxnh/VietnameseTraditionalStoneGame.git
 - Build cả hai solution **OAnQuan.sln** và **Server.sln** trong Visual Studio.
 
 **4. Chạy ứng dụng:**
-- Chạy dự án **Server* trước.
+- Chạy dự án **Server** trước.
 - Sau đó, chạy dự án **OAnQuan** để bắt đầu trò chơi.
 
 # Thành viên nhóm 
