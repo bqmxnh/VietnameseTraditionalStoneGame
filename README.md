@@ -1,6 +1,13 @@
 # Ô Ăn Quan - Vietnamese Traditional Game
 ## Introduction
 **Ô Ăn Quan** is a traditional Vietnamese folk game renowned for its strategic depth and cultural significance. Typically played by two players using readily available materials like pebbles, stones, or seeds, Ô Ăn Quan offers both entertainment and an opportunity to develop logical thinking, calculation skills, and strategic planning.
+#### Interface Design Overview
+<img width="485" alt="image" src="https://github.com/user-attachments/assets/c2e26cb7-5499-4d43-8863-28a6d0c4ecd9" /> 
+
+<img width="485" alt="image" src="https://github.com/user-attachments/assets/a917158f-2764-4e88-9883-c85e250c8200" />
+
+<img width="258" alt="image" src="https://github.com/user-attachments/assets/d8c514ce-5844-46bf-9235-058e2835a645" />
+
 ## System Requirements
 - **.NET Framework:** Version 6.0 or higher.
 - **Development Environment:** Visual Studio 2019 or later.
