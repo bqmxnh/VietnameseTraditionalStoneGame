@@ -4,16 +4,16 @@
 ## Interface Design Overview
 
 <div style="text-align: center; margin-bottom: 20px;">
-    <img width="485" alt="Giao diện kết nối vào lobby" src="https://github.com/user-attachments/assets/c2e26cb7-5499-4d43-8863-28a6d0c4ecd9" />
-    <p>Hình 1: Giao diện kết nối vào lobby</p>
+    <img width="485" alt="Lobby connection interface" src="https://github.com/user-attachments/assets/c2e26cb7-5499-4d43-8863-28a6d0c4ecd9" />
+    <p>Figure 1: Lobby connection interface</p>
 </div>
 <div style="text-align: center; margin-bottom: 20px;">
-    <img width="485" alt="Giao diện lobby" src="https://github.com/user-attachments/assets/a917158f-2764-4e88-9883-c85e250c8200" />
-    <p>Hình 2: Giao diện lobby</p>
+    <img width="485" alt="Lobby interface" src="https://github.com/user-attachments/assets/a917158f-2764-4e88-9883-c85e250c8200" />
+    <p>Figure 2: Lobby interface</p>
 </div>
 <div style="text-align: center; margin-bottom: 20px;">
-    <img width="303" alt="Giao diện chính" src="https://github.com/user-attachments/assets/12104fef-645b-4c0d-90ee-3ee5ac4bf140" />
-    <p>Hình 3: Giao diện chính</p>
+    <img width="303" alt="Main interface" src="https://github.com/user-attachments/assets/12104fef-645b-4c0d-90ee-3ee5ac4bf140" />
+    <p>Figure 3: Main interface</p>
 </div>
 
 ## System Requirements
