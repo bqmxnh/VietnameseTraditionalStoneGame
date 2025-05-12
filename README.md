@@ -1,34 +1,29 @@
-# Ô Ăn Quan - Trò Chơi Dân Gian Việt Nam
-## Giới thiệu
-Ô Ăn Quan là một trò chơi dân gian truyền thống của Việt Nam, nổi bật với tính chiến thuật và đậm chất văn hóa. Trò chơi này thường được chơi bởi hai người, sử dụng các vật liệu dễ tìm như sỏi, đá, hoặc hạt. Ô Ăn Quan không chỉ mang lại niềm vui mà còn giúp người chơi rèn luyện tư duy logic, kỹ năng tính toán và lập kế hoạch chiến lược.
-
-## Yêu cầu hệ thống
-- **.NET Framework:** Phiên bản 6.0 trở lên
-- **Môi trường phát triển:** Visual Studio 2019 hoặc các phiên bản mới hơn
-## Tính năng chính
-- **Tạo phòng chơi:** Tạo phòng chơi cho 2 người và đảm nhận vai trò Host.
-- **Tham gia phòng chơi:** Tham gia phòng chơi với vai trò Guest.
-- **Kết thúc ván chơi:** Tự động kết thúc khi các điều kiện trò chơi được thỏa mãn.
-- **Hướng dẫn người chơi mới:** Cung cấp hướng dẫn chi tiết về cách chơi.
-## Hướng dẫn cài đặt và sử dụng
-**1. Tải mã nguồn:**
-- Clone hoặc tải dự án từ kho lưu trữ bằng lệnh:
+# Ô Ăn Quan - Vietnamese Traditional Game
+## Introduction
+**Ô Ăn Quan** is a traditional Vietnamese folk game renowned for its strategic depth and cultural significance. Typically played by two players using readily available materials like pebbles, stones, or seeds, Ô Ăn Quan offers both entertainment and an opportunity to develop logical thinking, calculation skills, and strategic planning.
+## System Requirements
+- **.NET Framework:** Version 6.0 or higher.
+- **Development Environment:** Visual Studio 2019 or later.
+## Key Features
+- **Create Game Room:** Create a room for two players and assume the Host role.
+- **Join Game Room:** Join a room as a Guest.
+- **End Game:** Automatically concludes when game conditions are met.
+- **Guide for New Players:** Provides detailed instructions on how to play.
+## Installation and Usage Guide
+**1. Clone the Source Code:**
+- Clone or download the project from the repository using:
 ``` bash
 git clone https://github.com/bqmxnh/VietnameseTraditionalStoneGame.git
 ```
-**2. Mở dự án:**
-- Mở hai file solution: **OAnQuan.sln** và **Server.sln** trong Visual Studio.
+**2. Open the Project:**
+- Open the two solution files, **OAnQuan.sln** and **Server.sln**, in Visual Studio.
 
-**3. Biên dịch dự án:**
-- Build cả hai solution **OAnQuan.sln** và **Server.sln** trong Visual Studio.
+**3. Build the Project:**
+- Build both **OAnQuan.sln** and **Server.sln** solutions in Visual Studio.
 
-**4. Chạy ứng dụng:**
-- Chạy dự án **Server** trước.
-- Sau đó, chạy dự án **OAnQuan** để bắt đầu trò chơi.
+**4. Run the Application:**
+- Start the **Server** project first.
+- Then, launch the **OAnQuan** project to begin the game.
 
-# Thành viên nhóm 
-- **Bùi Quốc Minh** - MSSV: 22520855 - GitHub: bqmxnh
-- **Võ Huỳnh Kiều Ngân** - MSSV: 22520938 - GitHub: kieungann
-- **Phan Minh Phát** - MSSV: 22521077 - GitHub: Enolami
-# Giấy phép
-Dự án được phát triển trong khuôn khổ môn học **Lập trình mạng, Trường Đại học Công nghệ Thông tin - Đại học Quốc gia TP.HCM**. Mã nguồn được cung cấp với mục đích học tập và nghiên cứu.
+# License
+The project was developed as part of the **Network Programming** course at the University of Information Technology, Vietnam National University, Ho Chi Minh City. The source code is provided for educational and research purposes.
